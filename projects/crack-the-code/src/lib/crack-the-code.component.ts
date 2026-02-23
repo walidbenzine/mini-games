@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import {
   ChangeDetectionStrategy,
   Component,
@@ -23,13 +23,12 @@ import { CrackTheCodeTranslations } from './interfaces/crack-the-code-translatio
 @Component({
   selector: 'crack-the-code',
   imports: [
-    CommonModule,
     MatButtonModule,
     MatInputModule,
     MatFormField,
     MatDivider,
-    MatHint,
-  ],
+    MatHint
+],
   providers: [CrackTheCodeService],
   templateUrl: './crack-the-code.component.html',
   styleUrls: ['./crack-the-code.component.scss'],
