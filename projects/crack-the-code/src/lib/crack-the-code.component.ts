@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import {
+  ChangeDetectionStrategy,
   Component,
   computed,
   effect,
@@ -32,6 +33,7 @@ import { CrackTheCodeTranslations } from './interfaces/crack-the-code-translatio
   providers: [CrackTheCodeService],
   templateUrl: './crack-the-code.component.html',
   styleUrls: ['./crack-the-code.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CrackTheCodeComponent {
   readonly game = inject(CrackTheCodeService);
