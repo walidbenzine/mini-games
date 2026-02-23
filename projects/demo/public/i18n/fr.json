@@ -1,0 +1,19 @@
+{
+  "crackTheCode": "Cracker le code",
+  "changeLanguage": "Changer la langue",
+  "networks": "Réseaux",
+  "routes": "Pages",
+  "params": "Paramètres",
+  "crackTheCodeStartGame": "Démarrer le jeu",
+  "crackTheCodeTitle": "Cracker le code",
+  "crackTheCodeRestartGame": "Recommencer le jeu",
+  "crackTheCodeSecretCodeLabel": "Code secret",
+  "crackTheCodeAttemptsLabel": "Nombre d'essais",
+  "crackTheCodeInputPlaceholder": "Entrez votre proposition",
+  "crackTheCodeGuessAlreadyTried": "Vous avez déjà essayé cette proposition.",
+  "crackTheCodeSubmitGuess": "Soumettre",
+  "crackTheCodeAttemptsHistoryLabel": "Historique des essais",
+  "crackTheCodeCorrectPlaceLabel": "Bien placé",
+  "crackTheCodeWrongPlaceLabel": "Mal placé",
+  "crackTheCodeGameWonMessage": "Félicitations ! Vous avez trouvé le code secret !"
+}

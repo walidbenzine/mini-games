@@ -1,0 +1,100 @@
+@use "@angular/material" as mat;
+
+.menu-button {
+  position: absolute;
+  margin: 20px;
+  z-index: 3;
+}
+
+.menu-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: x-large;
+  width: 100%;
+  gap: 20px;
+  height: 100%;
+
+  @media (max-height: 900px) {
+    font-size: large;
+  }
+
+  .routes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    span {
+      cursor: pointer;
+    }
+
+    .activeRoute {
+      color: var(--mdc-checkbox-selected-icon-color);
+    }
+  }
+
+  h3 {
+    @media (max-height: 900px) {
+      margin: 0;
+    }
+  }
+
+  .params {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+
+    .selectors {
+      display: flex;
+      flex-direction: row;
+      gap: 30px;
+      align-items: center;
+      justify-items: center;
+    }
+  }
+
+  .networks {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+
+    .icons {
+      display: flex;
+      flex-direction: row;
+      gap: 30px;
+      align-items: center;
+      justify-items: center;
+
+      img {
+        width: 50px;
+        cursor: pointer;
+
+        @media (max-height: 900px) {
+          width: 30px;
+        }
+      }
+    }
+  }
+}
+
+mat-sidenav {
+  max-width: 80%;
+}
+
+mat-sidenav-content {
+  width: 100dvw;
+  height: 100dvh;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+mat-sidenav-content::-webkit-scrollbar {
+  display: none;
+}

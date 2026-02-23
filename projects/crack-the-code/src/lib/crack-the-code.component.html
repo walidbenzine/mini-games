@@ -1,0 +1,77 @@
+<div class="header">
+  <h2>{{ texts().title }}</h2>
+
+  <button mat-flat-button color="primary" (click)="startOrRestartGame()">
+    {{ game.isGameStarted() ? texts().restartGame : texts().startGame }}
+  </button>
+</div>
+
+@if (game.isGameStarted()) {
+  <div class="game-started">
+    <div class="game-inputs-container">
+      <div class="game-header">
+        <p>
+          {{ texts().secretCodeLabel }}:
+          <span class="bold">{{ game.codeToPrint() }}</span>
+        </p>
+
+        <span class="bold">{{ game.timerLabel() }} </span>
+      </div>
+
+      @if (game.isGameWon()) {
+        <p class="correct bold text-center">{{ texts().gameWonMessage }}</p>
+      }
+
+      <div class="game-info">
+        <div>
+          <label>{{ texts().attemptsLabel }}</label>
+          <span class="bold">{{ game.attempts().length }}</span>
+        </div>
+      </div>
+
+      <div class="guess">
+        <mat-form-field appearance="outline">
+          <mat-label>{{ texts().inputPlaceholder }}</mat-label>
+          <input
+            #inputGuess
+            matInput
+            maxlength="4"
+            placeholder="0000"
+            [disabled]="game.isGameWon()"
+            (input)="onGuessInput($event)"
+          />
+          @if (game.alreadyTriedThisGuess()) {
+            <mat-hint>{{ texts().guessAlreadyTried }}</mat-hint>
+          }
+        </mat-form-field>
+
+        <button
+          mat-flat-button
+          color="accent"
+          [disabled]="!game.canSubmitGuess()"
+          (click)="submitGuess()"
+        >
+          {{ texts().submitGuess }}
+        </button>
+      </div>
+    </div>
+
+    <div class="attempts">
+      <h3>{{ texts().attemptsHistoryLabel }}</h3>
+      <ul>
+        @for (attempt of game.attempts(); track attempt.guess) {
+          <li>
+            <span class="bold text-center">{{ attempt.guess }}</span>
+            <span class="correct text-center"
+              >{{ attempt.correctPlace }} {{ texts().correctPlaceLabel }}</span
+            >
+            <span class="wrong text-center"
+              >{{ attempt.wrongPlace }} {{ texts().wrongPlaceLabel }}</span
+            >
+          </li>
+          <mat-divider></mat-divider>
+        }
+      </ul>
+    </div>
+  </div>
+}

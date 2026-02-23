@@ -1,0 +1,19 @@
+{
+  "crackTheCode": "Crack the code",
+  "changeLanguage": "Change language",
+  "networks": "Networks",
+  "routes": "Pages",
+  "params": "Parameters",
+  "crackTheCodeStartGame": "Start Game",
+  "crackTheCodeTitle": "Crack the code",
+  "crackTheCodeRestartGame": "Restart Game",
+  "crackTheCodeSecretCodeLabel": "Secret code",
+  "crackTheCodeAttemptsLabel": "Number of attempts",
+  "crackTheCodeInputPlaceholder": "Enter your guess",
+  "crackTheCodeGuessAlreadyTried": "You have already tried this guess.",
+  "crackTheCodeSubmitGuess": "Submit",
+  "crackTheCodeAttemptsHistoryLabel": "Attempts history",
+  "crackTheCodeCorrectPlaceLabel": "Correct place",
+  "crackTheCodeWrongPlaceLabel": "Wrong place",
+  "crackTheCodeGameWonMessage": "Congratulations! You found the secret code!"
+}
