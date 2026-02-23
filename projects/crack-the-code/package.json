@@ -1,9 +1,9 @@
 {
-  "name": "crack-the-code",
+  "name": "@abenzine/crack-the-code",
   "author": {
     "name": "Walid BENZINE"
   },
-  "version": "1.0.0",
+  "version": "1.0.1",
   "peerDependencies": {
     "@angular/common": "^21.1.5",
     "@angular/core": "^21.1.5",

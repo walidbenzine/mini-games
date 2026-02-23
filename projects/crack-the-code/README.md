@@ -1,63 +1,206 @@
-# CrackTheCode
+# 🎮 Crack The Code
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.0.
+A lightweight, standalone Angular mini-game component.
 
-## Code scaffolding
+@abenzine/crack-the-code is a reusable Angular library that provides a simple "Crack the Code" number guessing game built with Angular Signals and Angular Material.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+It is:
 
-```bash
-ng generate component component-name
-```
+✅ Standalone component (no NgModule required)
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+✅ Built with Angular Signals
 
-```bash
-ng generate --help
-```
+✅ OnPush change detection
 
-## Building
+✅ i18n-agnostic
 
-To build the library, run:
+✅ Fully configurable via reactive translations
+
+## 📦 Installation
 
 ```bash
-ng build crack-the-code
+npm install @abenzine/crack-the-code
 ```
 
-This command will compile your project, and the build artifacts will be placed in the `dist/` directory.
+## ⚙️ Peer Dependencies
 
-### Publishing the Library
+Make sure your project has:
 
-Once the project is built, you can publish your library by following these steps:
+@angular/core
 
-1. Navigate to the `dist` directory:
-   ```bash
-   cd dist/crack-the-code
-   ```
+@angular/common
 
-2. Run the `npm publish` command to publish your library to the npm registry:
-   ```bash
-   npm publish
-   ```
+@angular/material
 
-## Running unit tests
+Compatible with Angular 21+.
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+### 🚀 Usage
 
-```bash
-ng test
-```
+1. Import the standalone component
 
-## Running end-to-end tests
+import { CrackTheCodeComponent } from '@abenzine/crack-the-code';
 
-For end-to-end (e2e) testing, run:
+@Component({
+standalone: true,
+imports: [CrackTheCodeComponent],
+template: `     <crack-the-code
+      [translations]="translations"
+    />
+  `
+})
+export class MyComponent {}
 
-```bash
-ng e2e
-```
+2. Internationalization (i18n)
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+This library is translation-system agnostic.
 
-## Additional Resources
+It does not depend on ngx-translate, Transloco, or any other i18n library.
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Instead, it expects translations to be passed reactively from the parent via an Angular Signal.
+
+🔤 Translations Interface
+
+export interface CrackTheCodeTranslations {
+title?: string;
+startGame?: string;
+restartGame?: string;
+secretCodeLabel?: string;
+attemptsLabel?: string;
+inputPlaceholder?: string;
+guessAlreadyTried?: string;
+submitGuess?: string;
+attemptsHistoryLabel?: string;
+correctPlaceLabel?: string;
+wrongPlaceLabel?: string;
+gameWonMessage?: string;
+}
+
+All properties are optional — defaults are provided internally.
+
+## 🧠 Recommended Reactive Setup (Angular Signals)
+
+Example using a translation system like ngx-translate:
+
+import { Component, signal } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
+import {
+CrackTheCodeComponent,
+CrackTheCodeTranslations
+} from '@abenzine/crack-the-code';
+
+@Component({
+standalone: true,
+imports: [CrackTheCodeComponent],
+template: `     <crack-the-code
+      [translations]="translations"
+    />
+  `
+})
+export class HomeComponent {
+
+translations = signal<CrackTheCodeTranslations>(
+this.buildTranslations()
+);
+
+constructor(private translate: TranslateService) {
+this.translate.onLangChange.subscribe(() => {
+this.translations.set(this.buildTranslations());
+});
+}
+
+private buildTranslations(): CrackTheCodeTranslations {
+return {
+title: this.translate.instant('CRACK.TITLE'),
+startGame: this.translate.instant('CRACK.START'),
+restartGame: this.translate.instant('CRACK.RESTART'),
+secretCodeLabel: this.translate.instant('CRACK.SECRET'),
+attemptsLabel: this.translate.instant('CRACK.ATTEMPTS'),
+inputPlaceholder: this.translate.instant('CRACK.INPUT'),
+guessAlreadyTried: this.translate.instant('CRACK.ALREADY_TRIED'),
+submitGuess: this.translate.instant('CRACK.SUBMIT'),
+attemptsHistoryLabel: this.translate.instant('CRACK.HISTORY'),
+correctPlaceLabel: this.translate.instant('CRACK.CORRECT'),
+wrongPlaceLabel: this.translate.instant('CRACK.WRONG'),
+gameWonMessage: this.translate.instant('CRACK.WON')
+};
+}
+}
+
+Whenever the language changes, the signal updates automatically and the component re-renders.
+
+## 🎨 Angular Material
+
+This component uses:
+
+MatButtonModule
+
+MatInputModule
+
+MatFormField
+
+MatDivider
+
+MatHint
+
+Make sure Angular Material is installed and configured in your application.
+
+## 🕹 Game Features
+
+4-digit random secret code
+
+Timer
+
+Attempt history
+
+Feedback:
+
+Correct digit in correct place
+
+Correct digit in wrong place
+
+Prevents duplicate guesses
+
+Restart support
+
+Reactive UI via Angular Signals
+
+## 🧩 Customization
+
+You can partially override translations:
+
+translations = signal({
+title: 'My Custom Title'
+});
+
+All missing values fallback to internal defaults.
+
+## 🏗 Technical Details
+
+Standalone component
+
+ChangeDetectionStrategy.OnPush
+
+Signal-based state management
+
+Internal service encapsulates game logic
+
+No global providers
+
+No i18n coupling
+
+Fully tree-shakable (sideEffects: false)
+
+## 📄 Example Template
+
+<crack-the-code
+[translations]="translations"
+/>
+
+## 👤 Author
+
+Walid BENZINE
+npm: @abenzine
+
+## 📜 License
+
+MIT
