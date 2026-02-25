@@ -1,9 +1,12 @@
 {
   "name": "@abenzine/crack-the-code",
+  "version": "1.0.2",
+  "repository": {
+    "url": "https://github.com/walidbenzine/mini-games"
+  },
   "author": {
     "name": "Walid BENZINE"
   },
-  "version": "1.0.1",
   "peerDependencies": {
     "@angular/common": "^21.1.5",
     "@angular/core": "^21.1.5",

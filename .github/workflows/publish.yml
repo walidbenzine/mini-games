@@ -1,9 +1,9 @@
-name: Publish Package
+name: Publish Changed Packages
 
 on:
   push:
-    tags:
-      - 'v*'
+    branches:
+      - main
 
 permissions:
   id-token: write
@@ -12,14 +12,54 @@ permissions:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
-          node-version: '24'
-          registry-url: 'https://registry.npmjs.org'
-      - run: npm ci
-      - run: npm run build
-      - run: npm test
-      - run: npm publish
+          fetch-depth: 2
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          registry-url: "https://registry.npmjs.org"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Test
+        run: npm test
+
+      - name: Detect changed versions
+        id: detect
+        run: |
+          for lib in projects/*; do
+            if [ -f "$lib/package.json" ]; then
+              old_version=$(git show HEAD^:$lib/package.json 2>/dev/null | jq -r .version)
+              new_version=$(jq -r .version $lib/package.json)
+
+              if [ "$old_version" != "$new_version" ]; then
+                echo "$lib" >> changed.txt
+              fi
+            fi
+          done
+
+          if [ -f changed.txt ]; then
+            libs=$(paste -sd "," changed.txt)
+            echo "changed_libs=$libs" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Publish changed libs
+        if: steps.detect.outputs.changed_libs != ''
+        run: |
+          IFS=',' read -ra LIBS <<< "${{ steps.detect.outputs.changed_libs }}"
+          for lib in "${LIBS[@]}"; do
+            echo "Publishing $lib"
+            cd $lib
+            npm publish --provenance --access public
+            cd -
+          done
