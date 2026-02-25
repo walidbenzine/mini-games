@@ -43,7 +43,8 @@ jobs:
               new_version=$(jq -r .version $lib/package.json)
 
               if [ "$old_version" != "$new_version" ]; then
-                echo "$lib" >> changed.txt
+                lib_name=$(basename $lib)
+                echo "$lib_name" >> changed.txt
               fi
             fi
           done
@@ -53,13 +54,19 @@ jobs:
             echo "changed_libs=$libs" >> $GITHUB_OUTPUT
           fi
 
-      - name: Publish changed libs
+      - name: Publish changed libs from dist
         if: steps.detect.outputs.changed_libs != ''
         run: |
           IFS=',' read -ra LIBS <<< "${{ steps.detect.outputs.changed_libs }}"
           for lib in "${LIBS[@]}"; do
-            echo "Publishing $lib"
-            cd $lib
-            npm publish --provenance --access public
-            cd -
+            DIST_PATH="dist/$lib"
+
+            if [ -f "$DIST_PATH/package.json" ]; then
+              echo "Publishing $lib from $DIST_PATH"
+              cd $DIST_PATH
+              npm publish --provenance --access public
+              cd -
+            else
+              echo "No build output found for $lib"
+            fi
           done
