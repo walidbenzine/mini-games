@@ -29,11 +29,16 @@ import { RoutesEnum } from '../../enums/routes.enum';
 export class MenuComponent extends BaseTranslationsComponent {
   routes = [
     { route: RoutesEnum.CRACK_THE_CODE, label: TranslatesEnum.CRACK_THE_CODE },
+    {
+      route: RoutesEnum.FIND_THE_NUMBER,
+      label: TranslatesEnum.FIND_THE_NUMBER,
+    },
   ];
 
   protected getTextsList(): TranslatesEnum[] {
     return [
       TranslatesEnum.CRACK_THE_CODE,
+      TranslatesEnum.FIND_THE_NUMBER,
       TranslatesEnum.ROUTES,
       TranslatesEnum.PARAMS,
       TranslatesEnum.NETWORKS,

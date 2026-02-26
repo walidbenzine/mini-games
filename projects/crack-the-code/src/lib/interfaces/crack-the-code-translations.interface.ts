@@ -2,6 +2,8 @@ export interface CrackTheCodeTranslations {
   title?: string;
   startGame?: string;
   restartGame?: string;
+  resumeGame?: string;
+  pauseGame?: string;
   secretCodeLabel?: string;
   attemptsLabel?: string;
   inputPlaceholder?: string;

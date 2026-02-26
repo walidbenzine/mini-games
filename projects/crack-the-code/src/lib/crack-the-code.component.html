@@ -1,9 +1,17 @@
 <div class="header">
   <h2>{{ texts().title }}</h2>
 
-  <button mat-flat-button color="primary" (click)="startOrRestartGame()">
-    {{ game.isGameStarted() ? texts().restartGame : texts().startGame }}
-  </button>
+  <div class="buttons">
+    @if (game.isGameStarted() && !game.isGameWon()) {
+      <button matButton="tonal" (click)="pauseOrResumeGame()">
+        {{ game.isGamePaused() ? texts().resumeGame : texts().pauseGame }}
+      </button>
+    }
+
+    <button matButton="filled" (click)="startOrRestartGame()">
+      {{ game.isGameStarted() ? texts().restartGame : texts().startGame }}
+    </button>
+  </div>
 </div>
 
 @if (game.isGameStarted()) {
@@ -30,29 +38,30 @@
       </div>
 
       <div class="guess">
-        <mat-form-field appearance="outline">
-          <mat-label>{{ texts().inputPlaceholder }}</mat-label>
-          <input
-            #inputGuess
-            matInput
-            maxlength="4"
-            placeholder="0000"
-            [disabled]="game.isGameWon()"
-            (input)="onGuessInput($event)"
-          />
-          @if (game.alreadyTriedThisGuess()) {
-            <mat-hint>{{ texts().guessAlreadyTried }}</mat-hint>
-          }
-        </mat-form-field>
-
-        <button
-          mat-flat-button
-          color="accent"
-          [disabled]="!game.canSubmitGuess()"
-          (click)="submitGuess()"
-        >
-          {{ texts().submitGuess }}
-        </button>
+        <form (submit)="$event.preventDefault(); submitGuess()">
+          <mat-form-field appearance="outline">
+            <mat-label>{{ texts().inputPlaceholder }}</mat-label>
+            <input
+              #inputGuess
+              matInput
+              maxlength="4"
+              placeholder="0000"
+              [disabled]="game.isGameWon() || game.isGamePaused()"
+              (input)="onGuessInput($event)"
+            />
+            @if (game.alreadyTriedThisGuess()) {
+              <mat-hint>{{ texts().guessAlreadyTried }}</mat-hint>
+            }
+            <button
+              matSuffix
+              matButton="outlined"
+              [disabled]="!game.canSubmitGuess()"
+              type="submit"
+            >
+              {{ texts().submitGuess }}
+            </button>
+          </mat-form-field>
+        </form>
       </div>
     </div>
 

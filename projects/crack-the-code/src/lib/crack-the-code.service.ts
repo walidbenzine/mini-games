@@ -7,12 +7,14 @@ interface AttemptFeedback {
   wrongPlace: number;
 }
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class CrackTheCodeService implements OnDestroy {
   readonly defaultTranslations: CrackTheCodeTranslations = {
     startGame: 'Start Game',
     secretCodeLabel: 'Secret Code',
     restartGame: 'Restart Game',
+    resumeGame: 'Resume Game',
+    pauseGame: 'Pause Game',
     attemptsLabel: 'Attempts',
     inputPlaceholder: 'Enter your guess',
     guessAlreadyTried: 'You already tried this guess!',
@@ -30,6 +32,7 @@ export class CrackTheCodeService implements OnDestroy {
 
   readonly codeLength = 4;
   readonly isGameStarted = signal(false);
+  readonly isGamePaused = signal(false);
   readonly isGameWon = signal(false);
   readonly currentGuess = signal<{ value: string }>({ value: '' });
   readonly attempts = signal<AttemptFeedback[]>([]);
@@ -49,6 +52,7 @@ export class CrackTheCodeService implements OnDestroy {
   readonly canSubmitGuess = computed(
     () =>
       this.isGameStarted() &&
+      !this.isGamePaused() &&
       !this.isGameWon() &&
       this.currentGuess().value.length === this.codeLength &&
       !this.alreadyTriedThisGuess(),
@@ -75,6 +79,7 @@ export class CrackTheCodeService implements OnDestroy {
 
     this.secretCode = this.generateCode();
     this.isGameStarted.set(true);
+    this.isGamePaused.set(false);
     this.isGameWon.set(false);
     this.currentGuess.set({ value: '' });
     this.elapsedSeconds.set(0);
@@ -93,6 +98,16 @@ export class CrackTheCodeService implements OnDestroy {
     this.timerRef = setInterval(() => {
       this.elapsedSeconds.update((seconds) => seconds + 1);
     }, 1000);
+  }
+
+  pauseGame(): void {
+    this.isGamePaused.set(true);
+    this.stopTimer();
+  }
+
+  resumeGame(): void {
+    this.isGamePaused.set(false);
+    this.startTimer();
   }
 
   updateCurrentGuess(value: string): void {

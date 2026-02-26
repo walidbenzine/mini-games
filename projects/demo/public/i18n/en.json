@@ -1,5 +1,6 @@
 {
   "crackTheCode": "Crack the code",
+  "findTheNumber": "Find the number",
   "changeLanguage": "Change language",
   "networks": "Networks",
   "routes": "Pages",
@@ -7,6 +8,8 @@
   "crackTheCodeStartGame": "Start Game",
   "crackTheCodeTitle": "Crack the code",
   "crackTheCodeRestartGame": "Restart Game",
+  "crackTheCodePauseGame": "Pause Game",
+  "crackTheCodeResumeGame": "Resume Game",
   "crackTheCodeSecretCodeLabel": "Secret code",
   "crackTheCodeAttemptsLabel": "Number of attempts",
   "crackTheCodeInputPlaceholder": "Enter your guess",

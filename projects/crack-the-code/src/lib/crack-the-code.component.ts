@@ -1,4 +1,3 @@
-
 import {
   ChangeDetectionStrategy,
   Component,
@@ -7,6 +6,7 @@ import {
   ElementRef,
   inject,
   input,
+  OnDestroy,
   ViewChild,
 } from '@angular/core';
 import { MatDivider } from '@angular/material/divider';
@@ -22,19 +22,12 @@ import { CrackTheCodeTranslations } from './interfaces/crack-the-code-translatio
 
 @Component({
   selector: 'crack-the-code',
-  imports: [
-    MatButtonModule,
-    MatInputModule,
-    MatFormField,
-    MatDivider,
-    MatHint
-],
-  providers: [CrackTheCodeService],
+  imports: [MatButtonModule, MatInputModule, MatFormField, MatDivider, MatHint],
   templateUrl: './crack-the-code.component.html',
   styleUrls: ['./crack-the-code.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CrackTheCodeComponent {
+export class CrackTheCodeComponent implements OnDestroy {
   readonly game = inject(CrackTheCodeService);
 
   @ViewChild('inputGuess') guessInput!: ElementRef<MatInput>;
@@ -61,6 +54,10 @@ export class CrackTheCodeComponent {
     this.game.startGame();
   }
 
+  pauseOrResumeGame(): void {
+    this.game.isGamePaused() ? this.game.resumeGame() : this.game.pauseGame();
+  }
+
   onGuessInput(event: Event): void {
     const target = event.target as HTMLInputElement;
     this.game.updateCurrentGuess(target.value);
@@ -68,5 +65,13 @@ export class CrackTheCodeComponent {
 
   submitGuess(): void {
     this.game.submitGuess();
+  }
+
+  ngOnDestroy(): void {
+    const shouldPauseGameOnDestroy =
+      this.game.isGameStarted() &&
+      !this.game.isGameWon() &&
+      !this.game.isGamePaused();
+    shouldPauseGameOnDestroy && this.game.pauseGame();
   }
 }

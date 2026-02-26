@@ -8,8 +8,15 @@ import { TranslatesEnum } from '../../enums/translates.enum';
 
 @Component({
   selector: 'app-crack-the-code',
-  templateUrl: './crack-the-code.component.html',
-  styleUrls: ['./crack-the-code.component.scss'],
+  template: `<crack-the-code
+    [translations]="gameTranslations()"
+  ></crack-the-code>`,
+  styles: `
+    crack-the-code {
+      width: 100dvw;
+      height: 100dvh;
+    }
+  `,
   imports: [CrackTheCodeComponent],
 })
 export class AppCrackTheCodeComponent extends BaseTranslationsComponent {
@@ -22,6 +29,12 @@ export class AppCrackTheCodeComponent extends BaseTranslationsComponent {
       title: this.translations().get(TranslatesEnum.CRACK_THE_CODE_TITLE),
       restartGame: this.translations().get(
         TranslatesEnum.CRACK_THE_CODE_RESTART_GAME,
+      ),
+      pauseGame: this.translations().get(
+        TranslatesEnum.CRACK_THE_CODE_PAUSE_GAME,
+      ),
+      resumeGame: this.translations().get(
+        TranslatesEnum.CRACK_THE_CODE_RESUME_GAME,
       ),
       secretCodeLabel: this.translations().get(
         TranslatesEnum.CRACK_THE_CODE_SECRET_CODE_LABEL,
@@ -58,6 +71,8 @@ export class AppCrackTheCodeComponent extends BaseTranslationsComponent {
       TranslatesEnum.CRACK_THE_CODE_START_GAME,
       TranslatesEnum.CRACK_THE_CODE_TITLE,
       TranslatesEnum.CRACK_THE_CODE_RESTART_GAME,
+      TranslatesEnum.CRACK_THE_CODE_RESUME_GAME,
+      TranslatesEnum.CRACK_THE_CODE_PAUSE_GAME,
       TranslatesEnum.CRACK_THE_CODE_SECRET_CODE_LABEL,
       TranslatesEnum.CRACK_THE_CODE_ATTEMPTS_LABEL,
       TranslatesEnum.CRACK_THE_CODE_INPUT_PLACEHOLDER,

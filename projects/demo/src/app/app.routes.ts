@@ -14,4 +14,11 @@ export const routes: Routes = [
         (m) => m.AppCrackTheCodeComponent,
       ),
   },
+  {
+    path: RoutesEnum.FIND_THE_NUMBER,
+    loadComponent: () =>
+      import('./pages/find-the-number/find-the-number.component').then(
+        (m) => m.AppFindTheNumberComponent,
+      ),
+  },
 ];
