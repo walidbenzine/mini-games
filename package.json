@@ -8,9 +8,11 @@
     "ng": "ng",
     "start": "ng serve demo",
     "build": "npm run build:libs && ng build demo",
-    "build:libs": "npm run build:crack-the-code",
+    "build:libs": "npm run build:crack-the-code && npm run build:guess-the-number",
     "build:crack-the-code": "ng build crack-the-code",
     "build:crack-the-code:watch": "ng build crack-the-code --watch",
+    "build:guess-the-number": "ng build guess-the-number",
+    "build:guess-the-number:watch": "ng build guess-the-number --watch",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },

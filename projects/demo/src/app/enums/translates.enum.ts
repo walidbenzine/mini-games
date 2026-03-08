@@ -1,10 +1,11 @@
 export enum TranslatesEnum {
   CHANGE_LANGUAGE = 'changeLanguage',
   CRACK_THE_CODE = 'crackTheCode',
-  FIND_THE_NUMBER = 'findTheNumber',
+  GUESS_THE_NUMBER = 'guessTheNumber',
   ROUTES = 'routes',
   PARAMS = 'params',
   NETWORKS = 'networks',
+
   CRACK_THE_CODE_START_GAME = 'crackTheCodeStartGame',
   CRACK_THE_CODE_TITLE = 'crackTheCodeTitle',
   CRACK_THE_CODE_RESTART_GAME = 'crackTheCodeRestartGame',
@@ -19,4 +20,20 @@ export enum TranslatesEnum {
   CRACK_THE_CODE_CORRECT_PLACE_LABEL = 'crackTheCodeCorrectPlaceLabel',
   CRACK_THE_CODE_WRONG_PLACE_LABEL = 'crackTheCodeWrongPlaceLabel',
   CRACK_THE_CODE_GAME_WON_MESSAGE = 'crackTheCodeGameWonMessage',
+
+  GUESS_THE_NUMBER_START_GAME = 'guessTheNumberStartGame',
+  GUESS_THE_NUMBER_TITLE = 'guessTheNumberTitle',
+  GUESS_THE_NUMBER_RESTART_GAME = 'guessTheNumberRestartGame',
+  GUESS_THE_NUMBER_RESUME_GAME = 'guessTheNumberResumeGame',
+  GUESS_THE_NUMBER_PAUSE_GAME = 'guessTheNumberPauseGame',
+  GUESS_THE_NUMBER_SECRET_CODE_LABEL = 'guessTheNumberSecretCodeLabel',
+  GUESS_THE_NUMBER_ATTEMPTS_LABEL = 'guessTheNumberAttemptsLabel',
+  GUESS_THE_NUMBER_INPUT_PLACEHOLDER = 'guessTheNumberInputPlaceholder',
+  GUESS_THE_NUMBER_GUESS_ALREADY_TRIED = 'guessTheNumberGuessAlreadyTried',
+  GUESS_THE_NUMBER_SUBMIT_GUESS = 'guessTheNumberSubmitGuess',
+  GUESS_THE_NUMBER_ATTEMPTS_HISTORY_LABEL = 'guessTheNumberAttemptsHistoryLabel',
+  GUESS_THE_NUMBER_IS_EQUAL_LABEL = 'guessTheNumberIsEqualLabel',
+  GUESS_THE_NUMBER_IS_LESS_LABEL = 'guessTheNumberIsLessLabel',
+  GUESS_THE_NUMBER_IS_GREATER_LABEL = 'guessTheNumberIsGreaterLabel',
+  GUESS_THE_NUMBER_GAME_WON_MESSAGE = 'guessTheNumberGameWonMessage',
 }

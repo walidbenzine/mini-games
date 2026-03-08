@@ -68,8 +68,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kB",
-                  "maximumError": "1MB"
+                  "maximumWarning": "1MB",
+                  "maximumError": "2MB"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -106,6 +106,32 @@
           "builder": "@angular/build:unit-test",
           "options": {
             "tsConfig": "projects/demo/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "guess-the-number": {
+      "projectType": "library",
+      "root": "projects/guess-the-number",
+      "sourceRoot": "projects/guess-the-number/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/guess-the-number/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/guess-the-number/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:unit-test",
+          "options": {
+            "tsConfig": "projects/guess-the-number/tsconfig.spec.json"
           }
         }
       }

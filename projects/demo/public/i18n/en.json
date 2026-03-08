@@ -1,6 +1,6 @@
 {
   "crackTheCode": "Crack the code",
-  "findTheNumber": "Find the number",
+  "guessTheNumber": "Guess the number",
   "changeLanguage": "Change language",
   "networks": "Networks",
   "routes": "Pages",
@@ -18,5 +18,20 @@
   "crackTheCodeAttemptsHistoryLabel": "Attempts history",
   "crackTheCodeCorrectPlaceLabel": "Correct place",
   "crackTheCodeWrongPlaceLabel": "Wrong place",
-  "crackTheCodeGameWonMessage": "Congratulations! You found the secret code!"
+  "crackTheCodeGameWonMessage": "Congratulations! You found the secret code!",
+  "guessTheNumberStartGame": "Start game",
+  "guessTheNumberTitle": "Guess the number",
+  "guessTheNumberRestartGame": "Restart game",
+  "guessTheNumberPauseGame": "Pause game",
+  "guessTheNumberResumeGame": "Resume game",
+  "guessTheNumberSecretCodeLabel": "Secret number",
+  "guessTheNumberAttemptsLabel": "Number of attempts",
+  "guessTheNumberInputPlaceholder": "Enter your guess",
+  "guessTheNumberGuessAlreadyTried": "You already tried this number.",
+  "guessTheNumberSubmitGuess": "Submit",
+  "guessTheNumberAttemptsHistoryLabel": "Attempts history",
+  "guessTheNumberIsEqualLabel": "Equal",
+  "guessTheNumberIsLessLabel": "Lower",
+  "guessTheNumberIsGreaterLabel": "Higher",
+  "guessTheNumberGameWonMessage": "Congratulations! You found the secret number!"
 }

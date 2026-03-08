@@ -15,10 +15,10 @@ export const routes: Routes = [
       ),
   },
   {
-    path: RoutesEnum.FIND_THE_NUMBER,
+    path: RoutesEnum.GUESS_THE_NUMBER,
     loadComponent: () =>
-      import('./pages/find-the-number/find-the-number.component').then(
-        (m) => m.AppFindTheNumberComponent,
+      import('./pages/guess-the-number/guess-the-number.component').then(
+        (m) => m.AppGuessTheNumberComponent,
       ),
   },
 ];

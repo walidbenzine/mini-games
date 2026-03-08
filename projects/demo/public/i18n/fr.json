@@ -1,6 +1,6 @@
 {
   "crackTheCode": "Cracker le code",
-  "findTheNumber": "Trouver le nombre",
+  "guessTheNumber": "Trouver le nombre",
   "changeLanguage": "Changer la langue",
   "networks": "Réseaux",
   "routes": "Pages",
@@ -18,5 +18,20 @@
   "crackTheCodeAttemptsHistoryLabel": "Historique des essais",
   "crackTheCodeCorrectPlaceLabel": "Bien placé",
   "crackTheCodeWrongPlaceLabel": "Mal placé",
-  "crackTheCodeGameWonMessage": "Félicitations ! Vous avez trouvé le code secret !"
+  "crackTheCodeGameWonMessage": "Félicitations ! Vous avez trouvé le code secret !",
+  "guessTheNumberStartGame": "Démarrer le jeu",
+  "guessTheNumberTitle": "Deviner le nombre",
+  "guessTheNumberRestartGame": "Recommencer le jeu",
+  "guessTheNumberPauseGame": "Mettre le jeu en pause",
+  "guessTheNumberResumeGame": "Continuer le jeu",
+  "guessTheNumberSecretCodeLabel": "Nombre secret",
+  "guessTheNumberAttemptsLabel": "Nombre d'essais",
+  "guessTheNumberInputPlaceholder": "Entrez votre proposition",
+  "guessTheNumberGuessAlreadyTried": "Vous avez déjà essayé ce nombre.",
+  "guessTheNumberSubmitGuess": "Valider",
+  "guessTheNumberAttemptsHistoryLabel": "Historique des essais",
+  "guessTheNumberIsEqualLabel": "Égal",
+  "guessTheNumberIsLessLabel": "Plus petit",
+  "guessTheNumberIsGreaterLabel": "Plus grand",
+  "guessTheNumberGameWonMessage": "Félicitations ! Vous avez trouvé le nombre secret !"
 }

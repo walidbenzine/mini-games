@@ -6,6 +6,9 @@
     "paths": {
       "crack-the-code": [
         "./dist/crack-the-code"
+      ],
+      "guess-the-number": [
+        "./dist/guess-the-number"
       ]
     },
     "outDir": "./dist/out-tsc",
@@ -28,5 +31,13 @@
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     "strictTemplates": true
-  }
+  },
+  "references": [
+    {
+      "path": "./projects/guess-the-number/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/guess-the-number/tsconfig.spec.json"
+    }
+  ]
 }
