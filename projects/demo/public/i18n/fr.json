@@ -34,5 +34,12 @@
   "guessTheNumberIsLessLabel": "Plus petit",
   "guessTheNumberIsGreaterLabel": "Plus grand",
   "guessTheNumberGameWonMessage": "Félicitations ! Vous avez trouvé le nombre secret !",
-  "memory": "Jeu de paires"
+  "memory": "Jeu de paires",
+  "memoryStartGame": "Démarrer le jeu",
+  "memoryTitle": "Jeu de paires",
+  "memoryRestartGame": "Recommencer le jeu",
+  "memoryPauseGame": "Mettre le jeu en pause",
+  "memoryResumeGame": "Continuer le jeu",
+  "memoryAttemptsLabel": "Nombre d'essais",
+  "memoryGameWonMessage": "Félicitations ! Vous avez trouvé les paires !"
 }

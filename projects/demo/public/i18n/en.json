@@ -34,5 +34,12 @@
   "guessTheNumberIsLessLabel": "Lower",
   "guessTheNumberIsGreaterLabel": "Higher",
   "guessTheNumberGameWonMessage": "Congratulations! You found the secret number!",
-  "memory": "Memory"
+  "memory": "Memory",
+  "memoryStartGame": "Start game",
+  "memoryTitle": "Memory",
+  "memoryRestartGame": "Restart game",
+  "memoryPauseGame": "Pause game",
+  "memoryResumeGame": "Resume game",
+  "memoryAttemptsLabel": "Number of attempts",
+  "memoryGameWonMessage": "Congratulations! You found the pairs!"
 }

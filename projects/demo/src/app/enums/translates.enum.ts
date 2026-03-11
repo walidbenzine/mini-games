@@ -38,4 +38,11 @@ export enum TranslatesEnum {
   GUESS_THE_NUMBER_GAME_WON_MESSAGE = 'guessTheNumberGameWonMessage',
 
   MEMORY = 'memory',
+  MEMORY_TITLE = 'memoryTitle',
+  MEMORY_START_GAME = 'memoryStartGame',
+  MEMORY_RESTART_GAME = 'memoryRestartGame',
+  MEMORY_PAUSE_GAME = 'memoryPauseGame',
+  MEMORY_RESUME_GAME = 'memoryResumeGame',
+  MEMORY_ATTEMPTS_LABEL = 'memoryAttemptsLabel',
+  MEMORY_GAME_WON_MESSAGE = 'memoryGameWonMessage',
 }
