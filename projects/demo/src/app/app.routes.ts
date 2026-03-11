@@ -21,4 +21,11 @@ export const routes: Routes = [
         (m) => m.AppGuessTheNumberComponent,
       ),
   },
+  {
+    path: RoutesEnum.MEMORY,
+    loadComponent: () =>
+      import('./pages/memory/memory.component').then(
+        (m) => m.AppMemoryComponent,
+      ),
+  },
 ];

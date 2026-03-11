@@ -33,12 +33,14 @@ export class MenuComponent extends BaseTranslationsComponent {
       route: RoutesEnum.GUESS_THE_NUMBER,
       label: TranslatesEnum.GUESS_THE_NUMBER,
     },
+    { route: RoutesEnum.MEMORY, label: TranslatesEnum.MEMORY },
   ];
 
   protected getTextsList(): TranslatesEnum[] {
     return [
       TranslatesEnum.CRACK_THE_CODE,
       TranslatesEnum.GUESS_THE_NUMBER,
+      TranslatesEnum.MEMORY,
       TranslatesEnum.ROUTES,
       TranslatesEnum.PARAMS,
       TranslatesEnum.NETWORKS,

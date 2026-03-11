@@ -1,0 +1,19 @@
+{
+  "name": "@abenzine/memory",
+  "version": "1.0.1",
+  "repository": {
+    "url": "https://github.com/walidbenzine/mini-games"
+  },
+  "author": {
+    "name": "Walid BENZINE"
+  },
+  "peerDependencies": {
+    "@angular/common": "^21.1.5",
+    "@angular/core": "^21.1.5",
+    "@angular/material": "^21.1.5"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "sideEffects": false
+}

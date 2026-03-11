@@ -8,13 +8,18 @@
     "ng": "ng",
     "start": "ng serve demo",
     "build": "npm run build:libs && ng build demo",
-    "build:libs": "npm run build:crack-the-code && npm run build:guess-the-number",
+    "build:libs": "npm run build:crack-the-code && npm run build:guess-the-number && npm run build:memory",
     "build:crack-the-code": "ng build crack-the-code",
     "build:crack-the-code:watch": "ng build crack-the-code --watch",
+    "test:crack-the-code": "ng test crack-the-code --watch=false",
     "build:guess-the-number": "ng build guess-the-number",
     "build:guess-the-number:watch": "ng build guess-the-number --watch",
+    "test:guess-the-number": "ng test guess-the-number --watch=false",
+    "build:memory": "ng build memory",
+    "build:memory:watch": "ng build memory --watch",
+    "test:memory": "ng test memory --watch=false",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test --watch=false"
   },
   "private": true,
   "dependencies": {

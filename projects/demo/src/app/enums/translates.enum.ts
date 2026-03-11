@@ -36,4 +36,6 @@ export enum TranslatesEnum {
   GUESS_THE_NUMBER_IS_LESS_LABEL = 'guessTheNumberIsLessLabel',
   GUESS_THE_NUMBER_IS_GREATER_LABEL = 'guessTheNumberIsGreaterLabel',
   GUESS_THE_NUMBER_GAME_WON_MESSAGE = 'guessTheNumberGameWonMessage',
+
+  MEMORY = 'memory',
 }

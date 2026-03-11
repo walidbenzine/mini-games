@@ -33,5 +33,6 @@
   "guessTheNumberIsEqualLabel": "Equal",
   "guessTheNumberIsLessLabel": "Lower",
   "guessTheNumberIsGreaterLabel": "Higher",
-  "guessTheNumberGameWonMessage": "Congratulations! You found the secret number!"
+  "guessTheNumberGameWonMessage": "Congratulations! You found the secret number!",
+  "memory": "Memory"
 }

@@ -1,0 +1,11 @@
+<div
+  class="card-container"
+  [ngClass]="{
+    flipped: cardElement().flipped,
+    matched: cardElement().matched,
+    disabled: cardElement().disabled,
+  }"
+  (click)="cardClicked.emit(cardElement())"
+>
+  <span>{{ cardElement().value }}</span>
+</div>

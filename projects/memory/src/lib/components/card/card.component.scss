@@ -1,0 +1,45 @@
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  aspect-ratio: 9/16;
+  width: 100%;
+  min-width: 50px;
+  cursor: pointer;
+  border: 1px solid var(--mat-sys-primary);
+  background: var(--mat-sys-on-secondary-fixed-variant);
+
+  span {
+    visibility: hidden;
+  }
+}
+
+.flipped {
+  border-color: var(--mat-sys-error);
+  background: none;
+  cursor: not-allowed;
+
+  span {
+    visibility: visible;
+  }
+}
+
+.matched {
+  border-color: var(--mat-sys-tertiary);
+  background: none;
+  cursor: not-allowed;
+
+  span {
+    visibility: visible;
+  }
+}
+
+.disabled {
+  cursor: not-allowed;
+  filter: brightness(0.4);
+}
+
+.card-container:hover {
+  background: var(--mat-sys-inverse-primary);
+}

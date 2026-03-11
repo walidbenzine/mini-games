@@ -1,0 +1,43 @@
+<div class="header">
+  <h2>{{ texts().title }}</h2>
+
+  <div class="buttons">
+    @if (game.isGameStarted() && !game.isGameWon()) {
+      <button matButton="tonal" (click)="pauseOrResumeGame()">
+        {{ game.isGamePaused() ? texts().resumeGame : texts().pauseGame }}
+      </button>
+    }
+
+    <button matButton="filled" (click)="startOrRestartGame()">
+      {{ game.isGameStarted() ? texts().restartGame : texts().startGame }}
+    </button>
+  </div>
+</div>
+
+@if (game.isGameStarted()) {
+  <div class="game-started">
+    <div class="game-container">
+      <div class="game-header">
+        <p>
+          {{ texts().attemptsLabel }}:
+          <span class="bold">{{ game.attempts() }}</span>
+        </p>
+
+        <span class="bold">{{ game.timerLabel() }} </span>
+      </div>
+
+      @if (game.isGameWon()) {
+        <p class="correct bold text-center">{{ texts().gameWonMessage }}</p>
+      }
+
+      <div class="game-content">
+        @for (card of game.cards(); track card.index) {
+          <app-card
+            [cardElement]="card"
+            (cardClicked)="game.onClickCard($event)"
+          ></app-card>
+        }
+      </div>
+    </div>
+  </div>
+}

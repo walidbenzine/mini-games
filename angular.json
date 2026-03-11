@@ -135,6 +135,32 @@
           }
         }
       }
+    },
+    "memory": {
+      "projectType": "library",
+      "root": "projects/memory",
+      "sourceRoot": "projects/memory/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/memory/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/memory/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:unit-test",
+          "options": {
+            "tsConfig": "projects/memory/tsconfig.spec.json"
+          }
+        }
+      }
     }
   },
   "schematics": {

@@ -9,6 +9,9 @@
       ],
       "guess-the-number": [
         "./dist/guess-the-number"
+      ],
+      "memory": [
+        "./dist/memory"
       ]
     },
     "outDir": "./dist/out-tsc",
@@ -38,6 +41,12 @@
     },
     {
       "path": "./projects/guess-the-number/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/memory/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/memory/tsconfig.spec.json"
     }
   ]
 }
