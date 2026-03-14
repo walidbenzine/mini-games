@@ -2,6 +2,7 @@ export enum TranslatesEnum {
   CHANGE_LANGUAGE = 'changeLanguage',
   CRACK_THE_CODE = 'crackTheCode',
   GUESS_THE_NUMBER = 'guessTheNumber',
+  SIMON = 'simon',
   ROUTES = 'routes',
   PARAMS = 'params',
   NETWORKS = 'networks',

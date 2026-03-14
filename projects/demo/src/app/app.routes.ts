@@ -28,4 +28,13 @@ export const routes: Routes = [
         (m) => m.AppMemoryComponent,
       ),
   },
+  {
+    path: RoutesEnum.SIMON,
+    loadComponent: () =>
+      import('./pages/simon/simon.component').then((m) => m.AppSimonComponent),
+  },
+  {
+    path: '**',
+    redirectTo: RoutesEnum.CRACK_THE_CODE,
+  },
 ];

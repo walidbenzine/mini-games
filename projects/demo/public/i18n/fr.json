@@ -41,5 +41,7 @@
   "memoryPauseGame": "Mettre le jeu en pause",
   "memoryResumeGame": "Continuer le jeu",
   "memoryAttemptsLabel": "Nombre d'essais",
-  "memoryGameWonMessage": "Félicitations ! Vous avez trouvé les paires !"
+  "memoryGameWonMessage": "Félicitations ! Vous avez trouvé les paires !",
+
+  "simon": "Simon"
 }

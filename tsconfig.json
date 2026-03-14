@@ -12,6 +12,9 @@
       ],
       "memory": [
         "./dist/memory"
+      ],
+      "simon": [
+        "./dist/simon"
       ]
     },
     "outDir": "./dist/out-tsc",
@@ -47,6 +50,12 @@
     },
     {
       "path": "./projects/memory/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/simon/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/simon/tsconfig.spec.json"
     }
   ]
 }

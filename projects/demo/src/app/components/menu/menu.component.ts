@@ -34,6 +34,7 @@ export class MenuComponent extends BaseTranslationsComponent {
       label: TranslatesEnum.GUESS_THE_NUMBER,
     },
     { route: RoutesEnum.MEMORY, label: TranslatesEnum.MEMORY },
+    { route: RoutesEnum.SIMON, label: TranslatesEnum.SIMON },
   ];
 
   protected getTextsList(): TranslatesEnum[] {
@@ -41,6 +42,7 @@ export class MenuComponent extends BaseTranslationsComponent {
       TranslatesEnum.CRACK_THE_CODE,
       TranslatesEnum.GUESS_THE_NUMBER,
       TranslatesEnum.MEMORY,
+      TranslatesEnum.SIMON,
       TranslatesEnum.ROUTES,
       TranslatesEnum.PARAMS,
       TranslatesEnum.NETWORKS,

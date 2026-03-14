@@ -8,7 +8,7 @@
     "ng": "ng",
     "start": "ng serve demo",
     "build": "npm run build:libs && ng build demo",
-    "build:libs": "npm run build:crack-the-code && npm run build:guess-the-number && npm run build:memory",
+    "build:libs": "npm run build:crack-the-code && npm run build:guess-the-number && npm run build:memory && npm run build:simon",
     "build:crack-the-code": "ng build crack-the-code",
     "build:crack-the-code:watch": "ng build crack-the-code --watch",
     "test:crack-the-code": "ng test crack-the-code --watch=false",
@@ -18,6 +18,9 @@
     "build:memory": "ng build memory",
     "build:memory:watch": "ng build memory --watch",
     "test:memory": "ng test memory --watch=false",
+    "build:simon": "ng build simon",
+    "build:simon:watch": "ng build simon --watch",
+    "test:simon": "ng test simon --watch=false",
     "watch": "ng build --watch --configuration development",
     "test": "ng test --watch=false"
   },

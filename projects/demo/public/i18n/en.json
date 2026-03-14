@@ -41,5 +41,7 @@
   "memoryPauseGame": "Pause game",
   "memoryResumeGame": "Resume game",
   "memoryAttemptsLabel": "Number of attempts",
-  "memoryGameWonMessage": "Congratulations! You found the pairs!"
+  "memoryGameWonMessage": "Congratulations! You found the pairs!",
+
+  "simon": "Simon"
 }
