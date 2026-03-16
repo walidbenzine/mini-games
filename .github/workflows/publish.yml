@@ -58,15 +58,28 @@ jobs:
         if: steps.detect.outputs.changed_libs != ''
         run: |
           IFS=',' read -ra LIBS <<< "${{ steps.detect.outputs.changed_libs }}"
+          FAILED=()
+
           for lib in "${LIBS[@]}"; do
             DIST_PATH="dist/$lib"
 
             if [ -f "$DIST_PATH/package.json" ]; then
               echo "Publishing $lib from $DIST_PATH"
               cd $DIST_PATH
-              npm publish --provenance --access public
+
+             if ! npm publish --provenance --access public; then
+                echo "❌ Failed to publish $lib"
+                FAILED+=("$lib")
+              else
+                echo "✅ $lib published"
+              fi
+
               cd -
             else
-              echo "No build output found for $lib"
+              echo "⚠️ No build output found for $lib"
             fi
           done
+
+          if [ ${#FAILED[@]} -ne 0 ]; then
+            echo "Some packages failed: ${FAILED[*]}"
+          fi
