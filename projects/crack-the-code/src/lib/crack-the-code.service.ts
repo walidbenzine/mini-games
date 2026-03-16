@@ -31,11 +31,21 @@ export class CrackTheCodeService implements OnDestroy {
   private readonly elapsedSeconds = signal(0);
 
   readonly codeLength = 4;
-  readonly isGameStarted = signal(false);
-  readonly isGamePaused = signal(false);
-  readonly isGameWon = signal(false);
-  readonly currentGuess = signal<{ value: string }>({ value: '' });
-  readonly attempts = signal<AttemptFeedback[]>([]);
+
+  private readonly _isGameStarted = signal(false);
+  readonly isGameStarted = this._isGameStarted.asReadonly();
+
+  private readonly _isGamePaused = signal(false);
+  readonly isGamePaused = this._isGamePaused.asReadonly();
+
+  private readonly _isGameWon = signal(false);
+  readonly isGameWon = this._isGameWon.asReadonly();
+
+  private readonly _currentGuess = signal<{ value: string }>({ value: '' });
+  readonly currentGuess = this._currentGuess.asReadonly();
+
+  private readonly _attempts = signal<AttemptFeedback[]>([]);
+  readonly attempts = this._attempts.asReadonly();
 
   readonly codeToPrint = computed(() => {
     if (!this.isGameStarted()) {
@@ -78,12 +88,12 @@ export class CrackTheCodeService implements OnDestroy {
     this.stopTimer();
 
     this.secretCode = this.generateCode();
-    this.isGameStarted.set(true);
-    this.isGamePaused.set(false);
-    this.isGameWon.set(false);
-    this.currentGuess.set({ value: '' });
+    this._isGameStarted.set(true);
+    this._isGamePaused.set(false);
+    this._isGameWon.set(false);
+    this._currentGuess.set({ value: '' });
     this.elapsedSeconds.set(0);
-    this.attempts.set([]);
+    this._attempts.set([]);
 
     this.startTimer();
   }
@@ -101,18 +111,18 @@ export class CrackTheCodeService implements OnDestroy {
   }
 
   pauseGame(): void {
-    this.isGamePaused.set(true);
+    this._isGamePaused.set(true);
     this.stopTimer();
   }
 
   resumeGame(): void {
-    this.isGamePaused.set(false);
+    this._isGamePaused.set(false);
     this.startTimer();
   }
 
   updateCurrentGuess(value: string): void {
     const sanitized = value.replace(/\D/g, '').slice(0, this.codeLength);
-    this.currentGuess.set({ value: sanitized });
+    this._currentGuess.set({ value: sanitized });
   }
 
   submitGuess(): void {
@@ -123,7 +133,7 @@ export class CrackTheCodeService implements OnDestroy {
     const currentGuess = this.currentGuess();
     const result = this.evaluateGuess(currentGuess.value.split(''));
 
-    this.attempts.update((currentAttempts) => [
+    this._attempts.update((currentAttempts) => [
       {
         guess: currentGuess.value,
         ...result,
@@ -132,11 +142,11 @@ export class CrackTheCodeService implements OnDestroy {
     ]);
 
     if (result.correctPlace === this.codeLength) {
-      this.isGameWon.set(true);
+      this._isGameWon.set(true);
       this.stopTimer();
     }
 
-    this.currentGuess.set({ value: '' });
+    this._currentGuess.set({ value: '' });
   }
 
   private evaluateGuess(guess: string[]): {

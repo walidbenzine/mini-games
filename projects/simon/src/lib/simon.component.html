@@ -1,1 +1,57 @@
-<p>simon works!</p>
+<div class="container">
+  <div class="header">
+    <h2>{{ texts().title }}</h2>
+
+    <div class="buttons">
+      @if (game.isGameStarted()) {
+        <button
+          matButton="tonal"
+          (click)="pauseOrResumeGame()"
+          [disabled]="game.gameOver() || game.disableButtons()"
+        >
+          {{ game.isGamePaused() ? texts().resumeGame : texts().pauseGame }}
+        </button>
+      }
+
+      <button
+        matButton="filled"
+        (click)="game.startGame()"
+        [disabled]="game.disableButtons()"
+      >
+        {{ game.isGameStarted() ? texts().restartGame : texts().startGame }}
+      </button>
+    </div>
+
+    <div class="controls">
+      <mat-checkbox
+        [checked]="game.soundEnabled()"
+        (change)="game.changeSoundEnability($event.checked)"
+      >
+        {{ texts().soundEnabled }}
+      </mat-checkbox>
+    </div>
+
+    <div class="gameInfo">
+      <span>{{ texts().level }} {{ game.level() }}</span>
+      <span>{{ game.timerLabel() }}</span>
+    </div>
+
+    @if (game.gameOver()) {
+      <span class="gameOver">{{ texts().gameOver }}</span>
+    }
+  </div>
+
+  <div class="board">
+    @for (tile of game.tiles(); track tile.id) {
+      <button
+        [ngClass]="{
+          tile: true,
+          disabled: game.disableClickTile(),
+          active: tile.active,
+        }"
+        [ngStyle]="{ background: tile.color }"
+        (click)="game.clickTile(tile.id)"
+      ></button>
+    }
+  </div>
+</div>

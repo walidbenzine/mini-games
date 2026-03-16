@@ -5,6 +5,7 @@
   "networks": "Networks",
   "routes": "Pages",
   "params": "Parameters",
+
   "crackTheCodeStartGame": "Start Game",
   "crackTheCodeTitle": "Crack the code",
   "crackTheCodeRestartGame": "Restart Game",
@@ -19,6 +20,7 @@
   "crackTheCodeCorrectPlaceLabel": "Correct place",
   "crackTheCodeWrongPlaceLabel": "Wrong place",
   "crackTheCodeGameWonMessage": "Congratulations! You found the secret code!",
+
   "guessTheNumberStartGame": "Start game",
   "guessTheNumberTitle": "Guess the number",
   "guessTheNumberRestartGame": "Restart game",
@@ -34,6 +36,7 @@
   "guessTheNumberIsLessLabel": "Lower",
   "guessTheNumberIsGreaterLabel": "Higher",
   "guessTheNumberGameWonMessage": "Congratulations! You found the secret number!",
+
   "memory": "Memory",
   "memoryStartGame": "Start game",
   "memoryTitle": "Memory",
@@ -43,5 +46,13 @@
   "memoryAttemptsLabel": "Number of attempts",
   "memoryGameWonMessage": "Congratulations! You found the pairs!",
 
-  "simon": "Simon"
+  "simon": "Simon",
+  "simonTitle": "Simon Game",
+  "simonStartGame": "Start game",
+  "simonRestartGame": "Restart game",
+  "simonPauseGame": "Pause game",
+  "simonResumeGame": "Resume game",
+  "simonLevel": "Level",
+  "simonGameOver": "Game over",
+  "simonSoundEnabled": "Game sound"
 }

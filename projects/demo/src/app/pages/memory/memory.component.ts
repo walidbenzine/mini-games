@@ -35,41 +35,13 @@ export class AppMemoryComponent extends BaseTranslationsComponent {
     translations: Map<TranslatesEnum, string>,
   ): MemoryTranslations {
     return {
-      title: this.getTranslationOrUndefined(
-        translations,
-        TranslatesEnum.MEMORY_TITLE,
-      ),
-      startGame: this.getTranslationOrUndefined(
-        translations,
-        TranslatesEnum.MEMORY_START_GAME,
-      ),
-      restartGame: this.getTranslationOrUndefined(
-        translations,
-        TranslatesEnum.MEMORY_RESTART_GAME,
-      ),
-      pauseGame: this.getTranslationOrUndefined(
-        translations,
-        TranslatesEnum.MEMORY_PAUSE_GAME,
-      ),
-      resumeGame: this.getTranslationOrUndefined(
-        translations,
-        TranslatesEnum.MEMORY_RESUME_GAME,
-      ),
-      attemptsLabel: this.getTranslationOrUndefined(
-        translations,
-        TranslatesEnum.MEMORY_ATTEMPTS_LABEL,
-      ),
-      gameWonMessage: this.getTranslationOrUndefined(
-        translations,
-        TranslatesEnum.MEMORY_GAME_WON_MESSAGE,
-      ),
+      title: translations.get(TranslatesEnum.MEMORY_TITLE),
+      startGame: translations.get(TranslatesEnum.MEMORY_START_GAME),
+      restartGame: translations.get(TranslatesEnum.MEMORY_RESTART_GAME),
+      pauseGame: translations.get(TranslatesEnum.MEMORY_PAUSE_GAME),
+      resumeGame: translations.get(TranslatesEnum.MEMORY_RESUME_GAME),
+      attemptsLabel: translations.get(TranslatesEnum.MEMORY_ATTEMPTS_LABEL),
+      gameWonMessage: translations.get(TranslatesEnum.MEMORY_GAME_WON_MESSAGE),
     };
-  }
-
-  private getTranslationOrUndefined(
-    translations: Map<TranslatesEnum, string>,
-    key: TranslatesEnum,
-  ): string | undefined {
-    return translations.get(key) || undefined;
   }
 }

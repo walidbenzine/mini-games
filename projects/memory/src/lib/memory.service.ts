@@ -20,10 +20,17 @@ export class MemoryService implements OnDestroy {
   private readonly _cards = signal<Card[]>([]);
   readonly cards = this._cards.asReadonly();
 
-  readonly isGameStarted = signal(false);
-  readonly isGamePaused = signal(false);
-  readonly currentGuess = signal<number | null>(null);
-  readonly attempts = signal<number>(0);
+  private readonly _isGameStarted = signal(false);
+  readonly isGameStarted = this._isGameStarted.asReadonly();
+
+  private readonly _isGamePaused = signal(false);
+  readonly isGamePaused = this._isGamePaused.asReadonly();
+
+  private readonly _currentGuess = signal<number | null>(null);
+  readonly currentGuess = this._currentGuess.asReadonly();
+
+  private readonly _attempts = signal<number>(0);
+  readonly attempts = this._attempts.asReadonly();
 
   readonly isGameWon = computed(() => this.cards().every((c) => c.matched));
 
@@ -50,12 +57,12 @@ export class MemoryService implements OnDestroy {
   startGame(hiddenNumbers: number): void {
     this.stopTimer();
 
-    this.isGameStarted.set(true);
-    this.isGamePaused.set(false);
-    this.currentGuess.set(null);
+    this._isGameStarted.set(true);
+    this._isGamePaused.set(false);
+    this._currentGuess.set(null);
     this.elapsedSeconds.set(0);
     this._cards.set([]);
-    this.attempts.set(0);
+    this._attempts.set(0);
     this.generateCards(hiddenNumbers);
 
     this.startTimer();
@@ -88,7 +95,7 @@ export class MemoryService implements OnDestroy {
   }
 
   pauseGame(): void {
-    this.isGamePaused.set(true);
+    this._isGamePaused.set(true);
     this.stopTimer();
     this.changeEnabilityCards(true);
   }
@@ -104,7 +111,7 @@ export class MemoryService implements OnDestroy {
   }
 
   resumeGame(): void {
-    this.isGamePaused.set(false);
+    this._isGamePaused.set(false);
     this.startTimer();
     this.changeEnabilityCards(false);
   }
@@ -175,7 +182,7 @@ export class MemoryService implements OnDestroy {
   }
 
   private incrementAttempts(): void {
-    this.attempts.update((attempts) => ++attempts);
+    this._attempts.update((attempts) => ++attempts);
   }
 
   ngOnDestroy(): void {

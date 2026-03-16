@@ -5,6 +5,7 @@
   "networks": "Réseaux",
   "routes": "Pages",
   "params": "Paramètres",
+
   "crackTheCodeStartGame": "Démarrer le jeu",
   "crackTheCodeTitle": "Cracker le code",
   "crackTheCodeRestartGame": "Recommencer le jeu",
@@ -19,6 +20,7 @@
   "crackTheCodeCorrectPlaceLabel": "Bien placé",
   "crackTheCodeWrongPlaceLabel": "Mal placé",
   "crackTheCodeGameWonMessage": "Félicitations ! Vous avez trouvé le code secret !",
+
   "guessTheNumberStartGame": "Démarrer le jeu",
   "guessTheNumberTitle": "Deviner le nombre",
   "guessTheNumberRestartGame": "Recommencer le jeu",
@@ -34,6 +36,7 @@
   "guessTheNumberIsLessLabel": "Plus petit",
   "guessTheNumberIsGreaterLabel": "Plus grand",
   "guessTheNumberGameWonMessage": "Félicitations ! Vous avez trouvé le nombre secret !",
+
   "memory": "Jeu de paires",
   "memoryStartGame": "Démarrer le jeu",
   "memoryTitle": "Jeu de paires",
@@ -43,5 +46,13 @@
   "memoryAttemptsLabel": "Nombre d'essais",
   "memoryGameWonMessage": "Félicitations ! Vous avez trouvé les paires !",
 
-  "simon": "Simon"
+  "simon": "Simon",
+  "simonTitle": "Jeu de Simon",
+  "simonStartGame": "Démarrer le jeu",
+  "simonRestartGame": "Recommencer le jeu",
+  "simonPauseGame": "Mettre le jeu en pause",
+  "simonResumeGame": "Continuer le jeu",
+  "simonLevel": "Niveau",
+  "simonGameOver": "Partie terminée",
+  "simonSoundEnabled": "Son du jeu"
 }

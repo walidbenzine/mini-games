@@ -1,0 +1,73 @@
+@use "@angular/material" as mat;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    .buttons {
+      display: flex;
+      gap: 10px;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .controls {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+
+      @include mat.checkbox-overrides(
+        (
+          label-text-weight: bold,
+        )
+      );
+    }
+
+    .gameInfo {
+      display: flex;
+      width: 100%;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      font-weight: bold;
+    }
+
+    .gameOver {
+      color: var(--mat-sys-error);
+    }
+  }
+
+  .board {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(2, 100px);
+    gap: 10px;
+
+    .tile {
+      width: 100px;
+      height: 100px;
+      opacity: 0.7;
+      cursor: pointer;
+      border-radius: 12px;
+    }
+
+    .active {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+
+    .disabled {
+      cursor: not-allowed;
+    }
+  }
+}

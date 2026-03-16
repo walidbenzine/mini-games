@@ -8,7 +8,7 @@
       </button>
     }
 
-    <button matButton="filled" (click)="startOrRestartGame()">
+    <button matButton="filled" (click)="game.startGame()">
       {{ game.isGameStarted() ? texts().restartGame : texts().startGame }}
     </button>
   </div>
