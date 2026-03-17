@@ -11,12 +11,6 @@ import { TranslatesEnum } from '../../enums/translates.enum';
   template: `<guess-the-number
     [translations]="gameTranslations()"
   ></guess-the-number>`,
-  styles: `
-    guess-the-number {
-      width: 100dvw;
-      height: 100dvh;
-    }
-  `,
   imports: [GuessTheNumberComponent],
 })
 export class AppGuessTheNumberComponent extends BaseTranslationsComponent {

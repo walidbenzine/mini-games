@@ -2,15 +2,15 @@
   <h2>{{ texts().title }}</h2>
 
   <div class="buttons">
+    <button matButton="filled" (click)="startOrRestartGame()">
+      {{ game.isGameStarted() ? texts().restartGame : texts().startGame }}
+    </button>
+
     @if (game.isGameStarted() && !game.isGameWon()) {
       <button matButton="tonal" (click)="pauseOrResumeGame()">
         {{ game.isGamePaused() ? texts().resumeGame : texts().pauseGame }}
       </button>
     }
-
-    <button matButton="filled" (click)="startOrRestartGame()">
-      {{ game.isGameStarted() ? texts().restartGame : texts().startGame }}
-    </button>
   </div>
 </div>
 
@@ -18,10 +18,10 @@
   <div class="game-started">
     <div class="game-inputs-container">
       <div class="game-header">
-        <p>
-          {{ texts().secretCodeLabel }}:
+        <h3>
+          <span>{{ texts().secretCodeLabel }} :</span>
           <span class="bold">{{ game.codeToPrint() }}</span>
-        </p>
+        </h3>
 
         <span class="bold">{{ game.timerLabel() }} </span>
       </div>

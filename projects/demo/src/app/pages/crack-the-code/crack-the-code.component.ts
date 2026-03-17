@@ -11,12 +11,6 @@ import { TranslatesEnum } from '../../enums/translates.enum';
   template: `<crack-the-code
     [translations]="gameTranslations()"
   ></crack-the-code>`,
-  styles: `
-    crack-the-code {
-      width: 100dvw;
-      height: 100dvh;
-    }
-  `,
   imports: [CrackTheCodeComponent],
 })
 export class AppCrackTheCodeComponent extends BaseTranslationsComponent {

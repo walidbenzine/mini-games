@@ -62,9 +62,7 @@ describe('CrackTheCodeComponent', () => {
   });
 
   it('should call startGame when start button clicked', () => {
-    const button = fixture.debugElement.query(
-      By.css('.header button:last-child'),
-    );
+    const button = fixture.debugElement.queryAll(By.css('.buttons button'))[0];
     button.triggerEventHandler('click');
     expect(mockService.startGame).toHaveBeenCalled();
   });
@@ -73,7 +71,9 @@ describe('CrackTheCodeComponent', () => {
     mockService.isGamePaused.mockReturnValue(false);
     fixture.detectChanges();
 
-    const pauseButton = fixture.debugElement.query(By.css('.buttons button'));
+    const pauseButton = fixture.debugElement.queryAll(
+      By.css('.buttons button'),
+    )[1];
     pauseButton.triggerEventHandler('click');
 
     expect(mockService.pauseGame).toHaveBeenCalled();
@@ -83,7 +83,9 @@ describe('CrackTheCodeComponent', () => {
     mockService.isGamePaused.mockReturnValue(true);
     fixture.detectChanges();
 
-    const pauseButton = fixture.debugElement.query(By.css('.buttons button'));
+    const pauseButton = fixture.debugElement.queryAll(
+      By.css('.buttons button'),
+    )[1];
     pauseButton.triggerEventHandler('click');
 
     expect(mockService.resumeGame).toHaveBeenCalled();

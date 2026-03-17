@@ -3,6 +3,14 @@
     <h2>{{ texts().title }}</h2>
 
     <div class="buttons">
+      <button
+        matButton="filled"
+        (click)="game.startGame()"
+        [disabled]="game.disableButtons()"
+      >
+        {{ game.isGameStarted() ? texts().restartGame : texts().startGame }}
+      </button>
+
       @if (game.isGameStarted()) {
         <button
           matButton="tonal"
@@ -12,14 +20,6 @@
           {{ game.isGamePaused() ? texts().resumeGame : texts().pauseGame }}
         </button>
       }
-
-      <button
-        matButton="filled"
-        (click)="game.startGame()"
-        [disabled]="game.disableButtons()"
-      >
-        {{ game.isGameStarted() ? texts().restartGame : texts().startGame }}
-      </button>
     </div>
 
     <div class="controls">

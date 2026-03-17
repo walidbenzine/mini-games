@@ -10,11 +10,11 @@ import { SimonTranslations, TilesEnum } from '../public-api';
 import { SimonService } from './services/simon.service';
 import { MatButton } from '@angular/material/button';
 import { MatCheckbox } from '@angular/material/checkbox';
-import { CommonModule } from '@angular/common';
+import { NgClass, NgStyle } from '@angular/common';
 
 @Component({
   selector: 'simon',
-  imports: [CommonModule, MatButton, MatCheckbox],
+  imports: [NgClass, NgStyle, MatButton, MatCheckbox],
   templateUrl: './simon.component.html',
   styleUrls: ['./simon.component.scss'],
 })

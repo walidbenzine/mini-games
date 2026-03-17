@@ -14,6 +14,8 @@ export class MemoryService implements OnDestroy {
     title: 'Memory',
   };
 
+  readonly defaultCardWidth: string = '50px';
+
   private timerRef: ReturnType<typeof setInterval> | undefined;
   private readonly elapsedSeconds = signal(0);
 

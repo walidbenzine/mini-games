@@ -24,14 +24,30 @@ export class SimonService {
   private readonly isPlayingSequence = signal(false);
   private readonly isGoingToNextRound = signal(false);
 
+  private readonly successSound = signal<HTMLAudioElement | undefined>(
+    undefined,
+  );
+  private readonly errorSound = signal<HTMLAudioElement | undefined>(undefined);
+
+  readonly tiles: Signal<Tile[]> = computed(() => this.tilesService.tiles());
+
   private readonly _level = signal(0);
   readonly level = this._level.asReadonly();
 
   private readonly _gameOver = signal(false);
   readonly gameOver = this._gameOver.asReadonly();
 
+  private readonly hasSoundAssets = computed(
+    () =>
+      !!this.successSound() ||
+      !!this.errorSound() ||
+      this.tiles().some((t) => !!t.sound),
+  );
+
   private readonly _soundEnabled = signal(true);
-  readonly soundEnabled = this._soundEnabled.asReadonly();
+  readonly soundEnabled = computed(
+    () => this.hasSoundAssets() && this._soundEnabled(),
+  );
 
   private readonly _isGameStarted = signal(false);
   readonly isGameStarted = this._isGameStarted.asReadonly();
@@ -53,11 +69,6 @@ export class SimonService {
   private readonly _elapsedSeconds = signal(0);
   readonly elapsedSeconds = this._elapsedSeconds.asReadonly();
 
-  private readonly successSound = signal<HTMLAudioElement | undefined>(
-    undefined,
-  );
-  private readonly errorSound = signal<HTMLAudioElement | undefined>(undefined);
-
   readonly disableClickTile: Signal<boolean> = computed(
     () =>
       !this.isGameStarted() ||
@@ -70,8 +81,6 @@ export class SimonService {
   readonly disableButtons: Signal<boolean> = computed(
     () => this.isPlayingSequence() || this.isGoingToNextRound(),
   );
-
-  readonly tiles: Signal<Tile[]> = computed(() => this.tilesService.tiles());
 
   setAssets(
     successSoundPath: string | undefined,

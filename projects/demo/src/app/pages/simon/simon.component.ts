@@ -11,12 +11,6 @@ import { TranslatesEnum } from '../../enums/translates.enum';
     errorSoundPath="./sounds/simon/error.mp3"
     [tilesSoundPath]="tilesSoundPath"
   ></simon>`,
-  styles: `
-    simon {
-      width: 100dvw;
-      height: 100dvh;
-    }
-  `,
   imports: [SimonComponent],
 })
 export class AppSimonComponent extends BaseTranslationsComponent {

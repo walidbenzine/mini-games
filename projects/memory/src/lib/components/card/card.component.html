@@ -1,5 +1,8 @@
 <div
   class="card-container"
+  [ngStyle]="{
+    width: width(),
+  }"
   [ngClass]="{
     flipped: cardElement().flipped,
     matched: cardElement().matched,

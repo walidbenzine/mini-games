@@ -133,7 +133,9 @@ describe('SimonService', () => {
     expect(activateTileMock).not.toHaveBeenCalled();
   });
 
-  it('should enable and disable sound', () => {
+  it('should enable and disable sound when have assets', () => {
+    service.setAssets('success.mp3', 'error.mp3', undefined);
+
     service.changeSoundEnability(false);
 
     expect(service.soundEnabled()).toBe(false);
@@ -141,5 +143,15 @@ describe('SimonService', () => {
     service.changeSoundEnability(true);
 
     expect(service.soundEnabled()).toBe(true);
+  });
+
+  it('should NOT enable and disable sound when dont have assets', () => {
+    service.changeSoundEnability(false);
+
+    expect(service.soundEnabled()).toBe(false);
+
+    service.changeSoundEnability(true);
+
+    expect(service.soundEnabled()).toBe(false);
   });
 });

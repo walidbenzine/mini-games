@@ -1,23 +1,24 @@
-import { Component, computed, Signal } from '@angular/core';
+import { Component, computed, OnInit, Signal } from '@angular/core';
 import { MemoryComponent, MemoryTranslations } from 'memory';
 import { BaseTranslationsComponent } from '../../components/base/base-translations.component';
 import { TranslatesEnum } from '../../enums/translates.enum';
 
 @Component({
   selector: 'app-memory',
-  template: `<memory [translations]="gameTranslations()"></memory>`,
-  styles: `
-    memory {
-      width: 100dvw;
-      height: 100dvh;
-    }
-  `,
+  template: `<memory
+    [translations]="gameTranslations()"
+    [cardWidth]="cardWidth"
+  ></memory>`,
   imports: [MemoryComponent],
 })
-export class AppMemoryComponent extends BaseTranslationsComponent {
+export class AppMemoryComponent
+  extends BaseTranslationsComponent
+  implements OnInit
+{
   gameTranslations: Signal<MemoryTranslations> = computed(() =>
     this.mapTranslations(this.translations()),
   );
+  cardWidth: string | undefined = undefined;
 
   protected getTextsList(): TranslatesEnum[] {
     return [
@@ -29,6 +30,12 @@ export class AppMemoryComponent extends BaseTranslationsComponent {
       TranslatesEnum.MEMORY_ATTEMPTS_LABEL,
       TranslatesEnum.MEMORY_GAME_WON_MESSAGE,
     ];
+  }
+
+  ngOnInit(): void {
+    if (window.innerWidth < 600) {
+      this.cardWidth = '40px';
+    }
   }
 
   private mapTranslations(
