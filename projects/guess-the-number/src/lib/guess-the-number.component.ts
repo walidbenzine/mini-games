@@ -16,13 +16,22 @@ import {
   MatHint,
   MatInput,
   MatLabel,
+  MatSuffix,
 } from '@angular/material/input';
 import { GuessTheNumberService } from './guess-the-number.service';
 import { GuessTheNumberTranslations } from './interfaces/guess-the-number-translations.interface';
 
 @Component({
   selector: 'guess-the-number',
-  imports: [MatButton, MatInput, MatFormField, MatDivider, MatHint, MatLabel],
+  imports: [
+    MatButton,
+    MatSuffix,
+    MatInput,
+    MatFormField,
+    MatDivider,
+    MatHint,
+    MatLabel,
+  ],
   templateUrl: './guess-the-number.component.html',
   styleUrls: ['./guess-the-number.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,

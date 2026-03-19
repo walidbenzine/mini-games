@@ -16,13 +16,22 @@ import {
   MatHint,
   MatInput,
   MatLabel,
+  MatSuffix,
 } from '@angular/material/input';
 import { CrackTheCodeService } from './crack-the-code.service';
 import { CrackTheCodeTranslations } from './interfaces/crack-the-code-translations.interface';
 
 @Component({
   selector: 'crack-the-code',
-  imports: [MatButton, MatInput, MatFormField, MatDivider, MatHint, MatLabel],
+  imports: [
+    MatButton,
+    MatSuffix,
+    MatInput,
+    MatFormField,
+    MatDivider,
+    MatHint,
+    MatLabel,
+  ],
   templateUrl: './crack-the-code.component.html',
   styleUrls: ['./crack-the-code.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,

@@ -15,24 +15,6 @@ Each game is developed as an independent Angular library and integrated into thi
 
 ---
 
-## 🧱 Project Structure
-
-```text
-projects/
-  ├── simon/
-  ├── crack-the-code/
-  ├── guess-the-number/
-  ├── memory/
-src/
-  ├── app/
-      ├── pages/
-      ├── components/
-      ├── services/
-      ├── enums/
-```
-
----
-
 ## 🧭 Navigation
 
 The app uses Angular Router with lazy-loaded standalone components:
