@@ -26,6 +26,19 @@ export class GuessTheNumberService implements OnDestroy {
     isEqual: 'Is the secret number',
     gameWonMessage: 'Congratulations! You guessed the number!',
     title: 'Guess the number',
+    instructions: `
+      <h3>How to play</h3>
+      <p>Find the secret number.</p>
+      <ul>
+        <li>Click <strong>"Start"</strong> to begin.</li>
+        <li>Enter a number.</li>
+        <li>Submit your guess.</li>
+        <li>If it's too high → number is lower.</li>
+        <li>If it's too low → number is greater.</li>
+        <li>Use hints to find the answer.</li>
+      </ul>
+      <p><strong>Good luck!</strong></p>
+    `,
   };
 
   private secretNumber: number = 0;

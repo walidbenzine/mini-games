@@ -29,6 +29,7 @@ export class AppMemoryComponent
       TranslatesEnum.MEMORY_RESUME_GAME,
       TranslatesEnum.MEMORY_ATTEMPTS_LABEL,
       TranslatesEnum.MEMORY_GAME_WON_MESSAGE,
+      TranslatesEnum.MEMORY_INSTRUCTIONS,
     ];
   }
 
@@ -49,6 +50,7 @@ export class AppMemoryComponent
       resumeGame: translations.get(TranslatesEnum.MEMORY_RESUME_GAME),
       attemptsLabel: translations.get(TranslatesEnum.MEMORY_ATTEMPTS_LABEL),
       gameWonMessage: translations.get(TranslatesEnum.MEMORY_GAME_WON_MESSAGE),
+      instructions: translations.get(TranslatesEnum.MEMORY_INSTRUCTIONS),
     };
   }
 }

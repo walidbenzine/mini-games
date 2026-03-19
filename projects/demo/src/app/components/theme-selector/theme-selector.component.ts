@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { MatIconModule } from '@angular/material/icon';
+import { MatIcon } from '@angular/material/icon';
 import { ThemeService } from '../../services/theme.service';
 
 @Component({
@@ -25,7 +25,7 @@ import { ThemeService } from '../../services/theme.service';
       }
     }
   `,
-  imports: [MatIconModule],
+  imports: [MatIcon],
   providers: [ThemeService],
 })
 export class ThemeSelectorComponent {

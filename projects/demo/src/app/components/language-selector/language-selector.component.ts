@@ -2,7 +2,7 @@ import { Component, computed, inject } from '@angular/core';
 import { LanguagesEnum } from '../../enums/languages.enum';
 import { LanguageService } from '../../services/language.service';
 import { TranslatesEnum } from '../../enums/translates.enum';
-import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatTooltip } from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-language-selector',
@@ -30,7 +30,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
       }
     }
   `,
-  imports: [MatTooltipModule],
+  imports: [MatTooltip],
 })
 export class LanguageSelectorComponent {
   private readonly languageService = inject(LanguageService);

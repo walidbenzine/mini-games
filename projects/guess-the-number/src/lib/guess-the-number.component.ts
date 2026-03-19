@@ -10,19 +10,19 @@ import {
   ViewChild,
 } from '@angular/core';
 import { MatDivider } from '@angular/material/divider';
-import { MatButtonModule } from '@angular/material/button';
+import { MatButton } from '@angular/material/button';
 import {
   MatFormField,
   MatHint,
   MatInput,
-  MatInputModule,
+  MatLabel,
 } from '@angular/material/input';
 import { GuessTheNumberService } from './guess-the-number.service';
 import { GuessTheNumberTranslations } from './interfaces/guess-the-number-translations.interface';
 
 @Component({
   selector: 'guess-the-number',
-  imports: [MatButtonModule, MatInputModule, MatFormField, MatDivider, MatHint],
+  imports: [MatButton, MatInput, MatFormField, MatDivider, MatHint, MatLabel],
   templateUrl: './guess-the-number.component.html',
   styleUrls: ['./guess-the-number.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,

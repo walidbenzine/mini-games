@@ -60,6 +60,9 @@ export class AppGuessTheNumberComponent extends BaseTranslationsComponent {
       gameWonMessage: this.translations().get(
         TranslatesEnum.GUESS_THE_NUMBER_GAME_WON_MESSAGE,
       ),
+      instructions: this.translations().get(
+        TranslatesEnum.GUESS_THE_NUMBER_INSTRUCTIONS,
+      ),
     };
   });
 
@@ -80,6 +83,7 @@ export class AppGuessTheNumberComponent extends BaseTranslationsComponent {
       TranslatesEnum.GUESS_THE_NUMBER_IS_LESS_LABEL,
       TranslatesEnum.GUESS_THE_NUMBER_IS_GREATER_LABEL,
       TranslatesEnum.GUESS_THE_NUMBER_GAME_WON_MESSAGE,
+      TranslatesEnum.GUESS_THE_NUMBER_INSTRUCTIONS,
     ];
   }
 }

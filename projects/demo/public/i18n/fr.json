@@ -20,6 +20,7 @@
   "crackTheCodeCorrectPlaceLabel": "Bien placé",
   "crackTheCodeWrongPlaceLabel": "Mal placé",
   "crackTheCodeGameWonMessage": "Félicitations ! Vous avez trouvé le code secret !",
+  "crackTheCodeInstructions": "<h3>Comment jouer</h3><p>Le but du jeu est de deviner un code secret composé de 4 chiffres.</p><ul><li>Cliquez sur <strong>\"Démarrer\"</strong> pour lancer une nouvelle partie.</li><li>Saisissez une combinaison de 4 chiffres.</li><li>Cliquez sur <strong>\"Valider\"</strong> pour proposer votre réponse.</li><li>Après chaque tentative, vous recevez des indices :</li><ul><li><strong>Correct Place</strong> : chiffre correct à la bonne position</li><li><strong>Wrong Place</strong> : chiffre correct mais mal placé</li></ul><li>Utilisez ces indices pour affiner vos prochaines propositions.</li><li>Vous gagnez lorsque vous trouvez la bonne combinaison.</li></ul><p>Le nombre de tentatives et le temps sont affichés pour suivre votre performance.</p><p><strong>Bonne chance !</strong></p>",
 
   "guessTheNumberStartGame": "Démarrer le jeu",
   "guessTheNumberTitle": "Deviner le nombre",
@@ -36,6 +37,7 @@
   "guessTheNumberIsLessLabel": "Plus petit",
   "guessTheNumberIsGreaterLabel": "Plus grand",
   "guessTheNumberGameWonMessage": "Félicitations ! Vous avez trouvé le nombre secret !",
+  "guessTheNumberInstructions": "<h3>Comment jouer</h3><p>Le but du jeu est de deviner un nombre secret généré aléatoirement.</p><ul><li>Cliquez sur <strong>\"Démarrer\"</strong> pour lancer une nouvelle partie.</li><li>Saisissez un nombre composé de plusieurs chiffres.</li><li>Cliquez sur <strong>\"Valider\"</strong> pour proposer votre réponse.</li><li>Après chaque tentative, un indice vous indique si le nombre secret est :</li><ul><li><strong>plus petit</strong> que votre proposition</li><li><strong>plus grand</strong> que votre proposition</li></ul><li>Utilisez ces indices pour vous rapprocher du bon nombre.</li><li>Vous gagnez lorsque vous trouvez exactement le nombre secret.</li></ul><p>Le nombre de tentatives et le temps écoulé vous permettent de suivre votre performance.</p><p><strong>Bonne chance !</strong></p>",
 
   "memory": "Jeu de paires",
   "memoryStartGame": "Démarrer le jeu",
@@ -45,6 +47,7 @@
   "memoryResumeGame": "Continuer le jeu",
   "memoryAttemptsLabel": "Nombre d'essais",
   "memoryGameWonMessage": "Félicitations ! Vous avez trouvé les paires !",
+  "memoryInstructions": "<h3>Comment jouer</h3><p>Le but du jeu est de retrouver toutes les paires de cartes identiques.</p><ul><li>Cliquez sur <strong>\"Démarrer\"</strong> pour commencer une nouvelle partie.</li><li>Retournez deux cartes en cliquant dessus.</li><li>Si les cartes sont identiques, elles restent visibles.</li><li>Sinon, elles se retournent à nouveau face cachée.</li><li>Mémorisez l'emplacement des cartes pour trouver les paires plus facilement.</li><li>Le jeu se termine lorsque toutes les paires sont trouvées.</li></ul><p>Le nombre de tentatives et le temps écoulé vous permettent de mesurer votre performance.</p><p><strong>Bonne chance !</strong></p>",
 
   "simon": "Simon",
   "simonTitle": "Jeu de Simon",
@@ -54,5 +57,6 @@
   "simonResumeGame": "Continuer le jeu",
   "simonLevel": "Niveau",
   "simonGameOver": "Partie terminée",
-  "simonSoundEnabled": "Son du jeu"
+  "simonSoundEnabled": "Son du jeu",
+  "simonInstructions": "<h3>Comment jouer</h3><p>Le but du jeu est de mémoriser et reproduire une séquence de couleurs qui devient de plus en plus longue à chaque niveau.</p><ul><li>Cliquez sur <strong>\"Démarrer\"</strong> pour commencer la partie.</li><li>Observez attentivement la séquence affichée.</li><li>Reproduisez la séquence en cliquant sur les cases dans le bon ordre.</li><li>À chaque niveau, une nouvelle couleur est ajoutée à la séquence.</li><li>Si vous vous trompez, la partie est terminée.</li></ul><p>Vous pouvez mettre le jeu en pause à tout moment et activer ou désactiver le son.</p><p><strong>Bonne chance !</strong></p>"
 }

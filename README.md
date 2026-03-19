@@ -1,59 +1,121 @@
-# MiniGames
+# 🎮 Mini Games Demo (Angular)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.5.
+This project is a demo application showcasing a collection of Angular mini-game libraries.
 
-## Development server
+---
 
-To start a local development server, run:
+## 📦 Included Games
 
-```bash
-ng serve
+- 🟢 Simon
+- 🔐 Crack The Code
+- 🔢 Guess The Number
+- 🧠 Memory
+
+Each game is developed as an independent Angular library and integrated into this demo app.
+
+---
+
+## 🧱 Project Structure
+
+```text
+projects/
+  ├── simon/
+  ├── crack-the-code/
+  ├── guess-the-number/
+  ├── memory/
+src/
+  ├── app/
+      ├── pages/
+      ├── components/
+      ├── services/
+      ├── enums/
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
+## 🧭 Navigation
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+The app uses Angular Router with lazy-loaded standalone components:
+
+- `/crack-the-code`
+- `/guess-the-number`
+- `/memory`
+- `/simon`
+
+A side menu allows easy navigation between games.
+
+---
+
+## 🌍 Internationalization
+
+The app uses **@ngx-translate/core**.
+
+### Supported languages:
+
+- 🇫🇷 French (default)
+- 🇬🇧 English
+
+Language can be changed dynamically via the UI.
+
+---
+
+## 🎨 Theme System
+
+A built-in theme system allows switching between:
+
+- 🌞 Light mode
+- 🌙 Dark mode
+- 🖥️ System preference
+
+The theme is persisted in `localStorage`.
+
+---
+
+## 🧩 Features
+
+- Standalone Angular components
+- Lazy loading
+- Reactive state using Angular signals
+- Modular architecture (one library per game)
+- Reusable UI (menu, selectors)
+- Translation system
+- Theme management
+
+---
+
+## ▶️ Run the project
 
 ```bash
-ng generate component component-name
+npm install
+ng run start
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Then open:
 
-```bash
-ng generate --help
+```text
+http://localhost:4200
 ```
 
-## Building
+---
 
-To build the project run:
+## 🛠️ Tech Stack
 
-```bash
-ng build
-```
+- Angular 21+
+- Angular Material
+- @ngx-translate/core
+- Signals API
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+---
 
-## Running unit tests
+## 👤 Author
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+**Walid BENZINE**
 
-```bash
-ng test
-```
+- GitHub: https://github.com/walidbenzine
+- LinkedIn: https://www.linkedin.com/in/benzine/
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
+## 📄 License
 
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+MIT

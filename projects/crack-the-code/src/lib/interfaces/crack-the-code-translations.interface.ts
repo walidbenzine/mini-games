@@ -13,4 +13,5 @@ export interface CrackTheCodeTranslations {
   correctPlaceLabel?: string;
   wrongPlaceLabel?: string;
   gameWonMessage?: string;
+  instructions?: string;
 }

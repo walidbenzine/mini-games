@@ -20,6 +20,7 @@
   "crackTheCodeCorrectPlaceLabel": "Correct place",
   "crackTheCodeWrongPlaceLabel": "Wrong place",
   "crackTheCodeGameWonMessage": "Congratulations! You found the secret code!",
+  "crackTheCodeInstructions": "<h3>How to play</h3><p>The goal of the game is to guess a secret code made of 4 digits.</p><ul><li>Click <strong>\"Start\"</strong> to begin a new game.</li><li>Enter a combination of 4 digits.</li><li>Click <strong>\"Submit\"</strong> to make a guess.</li><li>After each attempt, you receive feedback:</li><ul><li><strong>Correct Place</strong>: correct digit in the correct position</li><li><strong>Wrong Place</strong>: correct digit but in the wrong position</li></ul><li>Use this feedback to refine your next guesses.</li><li>You win when you find the correct combination.</li></ul><p>The number of attempts and elapsed time help track your performance.</p><p><strong>Good luck!</strong></p>",
 
   "guessTheNumberStartGame": "Start game",
   "guessTheNumberTitle": "Guess the number",
@@ -36,6 +37,7 @@
   "guessTheNumberIsLessLabel": "Lower",
   "guessTheNumberIsGreaterLabel": "Higher",
   "guessTheNumberGameWonMessage": "Congratulations! You found the secret number!",
+  "guessTheNumberInstructions": "<h3>How to play</h3><p>The goal of the game is to guess a randomly generated secret number.</p><ul><li>Click <strong>\"Start\"</strong> to begin a new game.</li><li>Enter a number made of several digits.</li><li>Click <strong>\"Submit\"</strong> to make a guess.</li><li>After each attempt, you will receive a hint telling you if the secret number is:</li><ul><li><strong>lower</strong> than your guess</li><li><strong>greater</strong> than your guess</li></ul><li>Use these hints to get closer to the correct number.</li><li>You win when you guess the exact secret number.</li></ul><p>The number of attempts and elapsed time help track your performance.</p><p><strong>Good luck!</strong></p>",
 
   "memory": "Memory",
   "memoryStartGame": "Start game",
@@ -45,6 +47,7 @@
   "memoryResumeGame": "Resume game",
   "memoryAttemptsLabel": "Number of attempts",
   "memoryGameWonMessage": "Congratulations! You found the pairs!",
+  "memoryInstructions": "<h3>How to play</h3><p>The goal of the game is to find all matching pairs of cards.</p><ul><li>Click <strong>\"Start\"</strong> to begin a new game.</li><li>Flip two cards by clicking on them.</li><li>If the cards match, they remain visible.</li><li>If not, they are flipped back face down.</li><li>Remember the card positions to find pairs more easily.</li><li>The game ends when all pairs are found.</li></ul><p>The number of attempts and elapsed time help measure your performance.</p><p><strong>Good luck!</strong></p>",
 
   "simon": "Simon",
   "simonTitle": "Simon Game",
@@ -54,5 +57,6 @@
   "simonResumeGame": "Resume game",
   "simonLevel": "Level",
   "simonGameOver": "Game over",
-  "simonSoundEnabled": "Game sound"
+  "simonSoundEnabled": "Game sound",
+  "simonInstructions": "<h3>How to play</h3><p>The goal of the game is to memorize and reproduce a sequence of colors that gets longer with each level.</p><ul><li>Click <strong>\"Start\"</strong> to begin the game.</li><li>Watch the sequence carefully.</li><li>Repeat the sequence by clicking the tiles in the correct order.</li><li>Each level adds a new color to the sequence.</li><li>If you make a mistake, the game is over.</li></ul><p>You can pause the game at any time and enable or disable sound.</p><p><strong>Good luck!</strong></p></div>"
 }

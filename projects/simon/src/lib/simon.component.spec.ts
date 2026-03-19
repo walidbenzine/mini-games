@@ -69,6 +69,7 @@ describe('SimonComponent', () => {
   });
 
   it('should toggle sound when checkbox changed', () => {
+    service.startGame();
     fixture.detectChanges();
 
     const checkbox = fixture.debugElement.query(By.css('mat-checkbox'));

@@ -12,6 +12,19 @@ export class MemoryService implements OnDestroy {
     attemptsLabel: 'Attempts',
     gameWonMessage: 'Congratulations! You won the game !',
     title: 'Memory',
+    instructions: `
+      <h3>How to play</h3>
+      <p>Find all matching pairs of cards.</p>
+      <ul>
+        <li>Click <strong>"Start"</strong> to begin.</li>
+        <li>Flip two cards.</li>
+        <li>If they match, they stay visible.</li>
+        <li>If not, they flip back.</li>
+        <li>Remember positions to improve.</li>
+        <li>Match all pairs to win.</li>
+      </ul>
+      <p><strong>Good luck!</strong></p>
+    `,
   };
 
   readonly defaultCardWidth: string = '50px';

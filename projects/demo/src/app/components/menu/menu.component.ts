@@ -1,10 +1,12 @@
 import { UpperCasePipe } from '@angular/common';
-import { Component, inject } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
-import { MatCheckboxModule } from '@angular/material/checkbox';
-import { MatIconModule } from '@angular/material/icon';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { RouterModule } from '@angular/router';
+import { Component } from '@angular/core';
+import { MatIcon } from '@angular/material/icon';
+import {
+  MatSidenav,
+  MatSidenavContainer,
+  MatSidenavContent,
+} from '@angular/material/sidenav';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 import { TranslatesEnum } from '../../enums/translates.enum';
 import { BaseTranslationsComponent } from '../base/base-translations.component';
 import { ThemeSelectorComponent } from '../theme-selector/theme-selector.component';
@@ -16,14 +18,15 @@ import { RoutesEnum } from '../../enums/routes.enum';
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.scss',
   imports: [
-    MatSidenavModule,
-    MatIconModule,
-    MatButtonModule,
-    MatCheckboxModule,
+    MatSidenav,
+    MatSidenavContainer,
+    MatSidenavContent,
+    MatIcon,
     ThemeSelectorComponent,
     LanguageSelectorComponent,
     UpperCasePipe,
-    RouterModule,
+    RouterLinkActive,
+    RouterLink,
   ],
 })
 export class MenuComponent extends BaseTranslationsComponent {

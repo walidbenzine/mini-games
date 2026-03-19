@@ -6,4 +6,5 @@ export interface MemoryTranslations {
   pauseGame?: string;
   attemptsLabel?: string;
   gameWonMessage?: string;
+  instructions?: string;
 }

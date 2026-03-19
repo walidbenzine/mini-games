@@ -14,4 +14,5 @@ export interface GuessTheNumberTranslations {
   isGreater?: string;
   isEqual?: string;
   gameWonMessage?: string;
+  instructions?: string;
 }

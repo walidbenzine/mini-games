@@ -24,6 +24,19 @@ export class CrackTheCodeService implements OnDestroy {
     wrongPlaceLabel: 'Wrong Place',
     gameWonMessage: 'Congratulations! You cracked the code!',
     title: 'Crack The Code',
+    instructions: `
+      <h3>How to play</h3>
+      <p>Guess the 4-digit secret code.</p>
+      <ul>
+        <li>Click <strong>"Start"</strong> to begin.</li>
+        <li>Enter a 4-digit number.</li>
+        <li>Submit your guess.</li>
+        <li><strong>Correct Place</strong>: right digit, right position.</li>
+        <li><strong>Wrong Place</strong>: right digit, wrong position.</li>
+        <li>Use hints to find the code.</li>
+      </ul>
+      <p><strong>Good luck!</strong></p>
+    `,
   };
 
   private secretCode: string[] = [];

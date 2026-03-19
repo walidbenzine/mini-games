@@ -1,13 +1,13 @@
 import { Component, computed, inject, input, OnDestroy } from '@angular/core';
 import { MemoryTranslations } from './interfaces/memory-translations.interface';
 import { MemoryService } from './memory.service';
-import { MatButtonModule } from '@angular/material/button';
+import { MatButton } from '@angular/material/button';
 import { CardComponent } from './components/card/card.component';
 import { NgStyle } from '@angular/common';
 
 @Component({
   selector: 'memory',
-  imports: [MatButtonModule, CardComponent, NgStyle],
+  imports: [MatButton, CardComponent, NgStyle],
   templateUrl: './memory.component.html',
   styleUrl: './memory.component.scss',
 })

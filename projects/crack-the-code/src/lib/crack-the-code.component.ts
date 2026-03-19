@@ -10,19 +10,19 @@ import {
   ViewChild,
 } from '@angular/core';
 import { MatDivider } from '@angular/material/divider';
-import { MatButtonModule } from '@angular/material/button';
+import { MatButton } from '@angular/material/button';
 import {
   MatFormField,
   MatHint,
   MatInput,
-  MatInputModule,
+  MatLabel,
 } from '@angular/material/input';
 import { CrackTheCodeService } from './crack-the-code.service';
 import { CrackTheCodeTranslations } from './interfaces/crack-the-code-translations.interface';
 
 @Component({
   selector: 'crack-the-code',
-  imports: [MatButtonModule, MatInputModule, MatFormField, MatDivider, MatHint],
+  imports: [MatButton, MatInput, MatFormField, MatDivider, MatHint, MatLabel],
   templateUrl: './crack-the-code.component.html',
   styleUrls: ['./crack-the-code.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,

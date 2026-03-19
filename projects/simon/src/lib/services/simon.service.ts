@@ -17,6 +17,18 @@ export class SimonService {
     level: 'Level',
     gameOver: 'Game over',
     soundEnabled: 'Game sound',
+    instructions: `
+      <h3>How to play</h3>
+      <p>Memorize and reproduce the sequence of colors.</p>
+      <ul>
+        <li>Click <strong>"Start"</strong> to begin.</li>
+        <li>Watch the sequence carefully.</li>
+        <li>Repeat it by clicking the tiles in the correct order.</li>
+        <li>Each level adds a new color.</li>
+        <li>A mistake ends the game.</li>
+      </ul>
+      <p><strong>Good luck!</strong></p>
+    `,
   };
 
   private readonly sequence = signal<TilesEnum[]>([]);

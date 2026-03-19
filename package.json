@@ -6,7 +6,7 @@
   "version": "1.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve demo",
+    "start": "npm run build && ng serve demo",
     "build": "npm run build:libs && ng build demo",
     "build:libs": "npm run build:crack-the-code && npm run build:guess-the-number && npm run build:memory && npm run build:simon",
     "build:crack-the-code": "ng build crack-the-code",

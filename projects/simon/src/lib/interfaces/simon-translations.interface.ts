@@ -7,4 +7,5 @@ export interface SimonTranslations {
   level?: string;
   gameOver?: string;
   soundEnabled?: string;
+  instructions?: string;
 }

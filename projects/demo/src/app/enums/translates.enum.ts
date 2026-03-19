@@ -21,6 +21,7 @@ export enum TranslatesEnum {
   CRACK_THE_CODE_CORRECT_PLACE_LABEL = 'crackTheCodeCorrectPlaceLabel',
   CRACK_THE_CODE_WRONG_PLACE_LABEL = 'crackTheCodeWrongPlaceLabel',
   CRACK_THE_CODE_GAME_WON_MESSAGE = 'crackTheCodeGameWonMessage',
+  CRACK_THE_CODE_INSTRUCTIONS = 'crackTheCodeInstructions',
 
   GUESS_THE_NUMBER_START_GAME = 'guessTheNumberStartGame',
   GUESS_THE_NUMBER_TITLE = 'guessTheNumberTitle',
@@ -37,6 +38,7 @@ export enum TranslatesEnum {
   GUESS_THE_NUMBER_IS_LESS_LABEL = 'guessTheNumberIsLessLabel',
   GUESS_THE_NUMBER_IS_GREATER_LABEL = 'guessTheNumberIsGreaterLabel',
   GUESS_THE_NUMBER_GAME_WON_MESSAGE = 'guessTheNumberGameWonMessage',
+  GUESS_THE_NUMBER_INSTRUCTIONS = 'guessTheNumberInstructions',
 
   MEMORY = 'memory',
   MEMORY_TITLE = 'memoryTitle',
@@ -46,6 +48,7 @@ export enum TranslatesEnum {
   MEMORY_RESUME_GAME = 'memoryResumeGame',
   MEMORY_ATTEMPTS_LABEL = 'memoryAttemptsLabel',
   MEMORY_GAME_WON_MESSAGE = 'memoryGameWonMessage',
+  MEMORY_INSTRUCTIONS = 'memoryInstructions',
 
   SIMON_TITLE = 'simonTitle',
   SIMON_START_GAME = 'simonStartGame',
@@ -55,4 +58,5 @@ export enum TranslatesEnum {
   SIMON_LEVEL = 'simonLevel',
   SIMON_GAME_OVER = 'simonGameOver',
   SIMON_SOUND_ENABLED = 'simonSoundEnabled',
+  SIMON_INSTRUCTIONS = 'simonInstructions',
 }

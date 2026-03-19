@@ -22,36 +22,42 @@
       }
     </div>
 
-    <div class="controls">
-      <mat-checkbox
-        [checked]="game.soundEnabled()"
-        (change)="game.changeSoundEnability($event.checked)"
-      >
-        {{ texts().soundEnabled }}
-      </mat-checkbox>
-    </div>
+    @if (game.isGameStarted()) {
+      <div class="controls">
+        <mat-checkbox
+          [checked]="game.soundEnabled()"
+          (change)="game.changeSoundEnability($event.checked)"
+        >
+          {{ texts().soundEnabled }}
+        </mat-checkbox>
+      </div>
 
-    <div class="gameInfo">
-      <span>{{ texts().level }} {{ game.level() }}</span>
-      <span>{{ game.timerLabel() }}</span>
-    </div>
+      <div class="gameInfo">
+        <span>{{ texts().level }} {{ game.level() }}</span>
+        <span>{{ game.timerLabel() }}</span>
+      </div>
+    }
 
     @if (game.gameOver()) {
       <span class="gameOver">{{ texts().gameOver }}</span>
     }
   </div>
 
-  <div class="board">
-    @for (tile of game.tiles(); track tile.id) {
-      <button
-        [ngClass]="{
-          tile: true,
-          disabled: game.disableClickTile(),
-          active: tile.active,
-        }"
-        [ngStyle]="{ background: tile.color }"
-        (click)="game.clickTile(tile.id)"
-      ></button>
-    }
-  </div>
+  @if (game.isGameStarted()) {
+    <div class="board">
+      @for (tile of game.tiles(); track tile.id) {
+        <button
+          [ngClass]="{
+            tile: true,
+            disabled: game.disableClickTile(),
+            active: tile.active,
+          }"
+          [ngStyle]="{ background: tile.color }"
+          (click)="game.clickTile(tile.id)"
+        ></button>
+      }
+    </div>
+  } @else {
+    <div [innerHTML]="texts().instructions"></div>
+  }
 </div>
